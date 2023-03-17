@@ -1,0 +1,30 @@
+using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+
+public class NetworkManager : MonoBehaviourPunCallbacks
+{
+    void Start()
+    {
+        // Connect to Photon servers
+        PhotonNetwork.ConnectUsingSettings();
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        // Join a room
+        PhotonNetwork.JoinRandomRoom();
+    }
+
+    public override void OnJoinRandomFailed(short returnCode, string message)
+    {
+        // If no room is available, create a new one
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
+    }
+
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("Joined room " + PhotonNetwork.CurrentRoom.Name);
+        gameObject.GetComponent<Timer>().enabled=true;
+    }
+}
