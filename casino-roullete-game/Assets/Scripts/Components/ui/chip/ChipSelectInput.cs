@@ -34,5 +34,12 @@ namespace Components
                 gameCmdFactory.ChipSelect(characterTable, chipSelected.chipData).Execute();
             }
         }
+
+        public void changevalue(GameObject g){
+            
+            ChipSelected chipSelected = g.GetComponent<ChipSelected>();
+                gameCmdFactory.ChipSelect(characterTable, chipSelected.chipData).Execute();
+            
+        }
     }
 }

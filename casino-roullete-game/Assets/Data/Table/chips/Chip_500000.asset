@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chipName: Chip 500K
   chipkey: 10
-  chipValue: 500000
+  chipValue: 1
   chipSprite: {fileID: 842874519943553434, guid: f8a93430902ecce4ba36a6250581bbd8,
     type: 3}
-  chipArray: 1

@@ -28,8 +28,11 @@ namespace Components
 
         void FixedUpdate()
         {
+            
+            if(gameRoullete.currentSpeed != gameRoullete.defaultSpeed){
             wheelRotator.transform.Rotate(Vector3.forward * gameRoullete.currentSpeed * Time.deltaTime);
             ballRotator.transform.Rotate(Vector3.back * gameRoullete.currentSpeed * 3 * Time.deltaTime);  
+        }
         }
     }
 }

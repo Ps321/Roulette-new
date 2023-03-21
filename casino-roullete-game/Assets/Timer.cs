@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Components;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviourPunCallbacks
 {
     public float timerValue = 60.0f;
+
+    public Text textval;
     public bool enabletimer=false;
 
     public GameObject a;
@@ -15,6 +19,7 @@ public class Timer : MonoBehaviourPunCallbacks
     void UpdateTimer(float value)
     {
         timerValue = value;
+       
         Debug.Log(timerValue);
     }
 
@@ -38,10 +43,13 @@ void Start()
         if(enabled==true){
             Countdown();
        
-
+       /* if(timerValue==30){
+            Application.Quit();
+        }*/
+         textval.text="00:"+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
             a.GetComponent<GamePlayInput>().OnClick();
-            enabled=false;
+            timerValue=80;
         }
          }
     }
@@ -52,5 +60,9 @@ void Start()
             timerValue -= Time.deltaTime;
             photonView.RPC("UpdateTimer", RpcTarget.All, timerValue);
         }
+    }
+
+    public void mainlobby(){
+        SceneManager.LoadScene(1);
     }
 }

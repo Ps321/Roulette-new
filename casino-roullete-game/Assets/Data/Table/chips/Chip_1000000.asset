@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chipName: Chip 1M
   chipkey: 11
-  chipValue: 1000000
+  chipValue: 5
   chipSprite: {fileID: -4486523061708971252, guid: f8a93430902ecce4ba36a6250581bbd8,
     type: 3}

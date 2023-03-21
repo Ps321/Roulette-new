@@ -12,6 +12,7 @@ namespace Components
     {
         public CharacterTable characterTable;
         public Animator mainCameraAnimator;
+        public GameObject gg;
 
         void Start()
         {
@@ -22,6 +23,14 @@ namespace Components
 
         public void AnimateMainCamera(bool isRound)
         {
+
+
+            if(isRound==true){
+                gg.SetActive(false);
+            }
+            else{
+                gg.SetActive(true);
+            }
             mainCameraAnimator.SetBool("Play", isRound);
         }
     }
