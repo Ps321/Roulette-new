@@ -12,6 +12,7 @@ namespace Components
     {
         public GameCmdFactory gameCmdFactory;
         public CharacterTable characterTable;
+        public int currentchipvalue=10;
         private bool _selectorAnchor;
 
         void Start()
@@ -38,7 +39,8 @@ namespace Components
         public void changevalue(GameObject g){
             
             ChipSelected chipSelected = g.GetComponent<ChipSelected>();
-                gameCmdFactory.ChipSelect(characterTable, chipSelected.chipData).Execute();
+            currentchipvalue=chipSelected.chipData.chipValue;
+            gameCmdFactory.ChipSelect(characterTable, chipSelected.chipData).Execute();
             
         }
     }

@@ -52,6 +52,13 @@ namespace Commands
 
             _interactableButton.InstantiateChip(characterTable, buttonData);
         }
+        public void Click1()
+        {
+            if (!_statusButton._isActive)
+                return;
+
+            _interactableButton.InstantiateChip1(characterTable, buttonData);
+        }
 
         public void OnPointerDown (PointerEventData eventData) 
         {

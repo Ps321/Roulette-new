@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1563967196799418756}
   - component: {fileID: 1563967196799418757}
+  - component: {fileID: 4186739586162926390}
   m_Layer: 0
-  m_Name: InstanceSphere
+  m_Name: RoulleteBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563967196799418755}
   m_LocalRotation: {x: -0, y: -0, z: 0.17631172, w: 0.98433447}
-  m_LocalPosition: {x: -2.92, y: 0.74, z: 0}
-  m_LocalScale: {x: 0.016940001, y: 0.016940001, z: 0.01837}
+  m_LocalPosition: {x: -2.9181, y: 0.74221, z: 0}
+  m_LocalScale: {x: 0.026567005, y: 0.026567005, z: 0.028809672}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,3 +83,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4186739586162926390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563967196799418755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09036ce7d170b4a4dbe48b8d634d45f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -52,7 +52,15 @@ namespace Components
         IEnumerator Winner(int number, bool isWin)
         {
             tittleLabel.text = isWin ? "You win!" : "You lost!";
-            valueLabel.text = number.ToString();
+
+            if(isWin){
+                valueLabel.text = number.ToString();
+            }
+            else{
+                number=-number;
+                valueLabel.text = number.ToString();
+            }
+            
 
             shadowAnim.SetBool("Shadow", true);
             winLostContainer.SetActive(true);

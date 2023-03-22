@@ -48,8 +48,9 @@ namespace Components
             IEnumerable<GameObject> anchor = _anchorNumbers.Where(anc => anc.name == $"handler_{num}");
             _ballPosition = anchor.ToArray()[0].gameObject.transform.position;
             
-            _sphere = Instantiate(gameRoullete.sphere);
+            _sphere = Instantiate(gameRoullete.sphere,_ballPosition,Quaternion.Euler(0,0,0));
             _sphere.transform.position = _ballPosition;
+           // _sphere.transform.rotation=Quaternion.identity;
             _sphere.SetActive(true);
             _sphere.transform.SetParent(sphereContainer.transform);
 

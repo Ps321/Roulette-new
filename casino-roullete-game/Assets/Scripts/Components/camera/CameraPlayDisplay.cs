@@ -12,6 +12,7 @@ namespace Components
     {
         public CharacterTable characterTable;
         public Animator mainCameraAnimator;
+        public Animator rouletteAnimator;
         public GameObject gg;
 
         void Start()
@@ -26,12 +27,14 @@ namespace Components
 
 
             if(isRound==true){
-                gg.SetActive(false);
-            }
-            else{
+                rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(true);
             }
-            mainCameraAnimator.SetBool("Play", isRound);
+            else{
+                rouletteAnimator.SetBool("spin", isRound);
+                gg.SetActive(false);
+            }
+           // mainCameraAnimator.SetBool("Play", isRound);
         }
     }
 }
