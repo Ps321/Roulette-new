@@ -1,13 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
-using Commands;
 using UnityEngine;
+using Components;
 using ViewModel;
 using UniRx;
-using System;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+
 
 namespace Commands
 {
@@ -21,6 +19,14 @@ namespace Commands
         private IReseteableButton _resetableButton;
         private IInteractableButton _interactableButton;
         public ILongPress _longPress;
+       public GameObject ab;
+         ChipSelectInput c;
+        
+         Dictionary<string,int> myDictionary;
+
+         public ButtonDict dd;
+
+        
         
         void Awake() 
         {
@@ -32,11 +38,15 @@ namespace Commands
         
         void Start()
         {
+           
             _resetableButton.ResetButton(buttonData);
 
             characterTable.currentTableActive
                 .Subscribe(OnActiveButton)
                 .AddTo(this);
+
+            c=ab.GetComponent<ChipSelectInput>();
+         
         }
         
         private void OnActiveButton(bool isActive)
@@ -49,14 +59,29 @@ namespace Commands
         {
             if (!_statusButton._isActive)
                 return;
+            buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
+            if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
+                
+                dd.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop;
+            }else{
+                dd.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop);
+            }
+
 
             _interactableButton.InstantiateChip(characterTable, buttonData);
+            
         }
         public void Click1()
         {
             if (!_statusButton._isActive)
                 return;
-
+            buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
+          if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
+                
+                dd.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop;
+            }else{
+                dd.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop);
+            }
             _interactableButton.InstantiateChip1(characterTable, buttonData);
         }
 

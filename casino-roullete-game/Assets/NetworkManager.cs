@@ -25,6 +25,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("Joined room " + PhotonNetwork.CurrentRoom.Name);
-        gameObject.GetComponent<Timer>().enabled=true;
+        gameObject.GetComponent<Timer1>().enabled=true;
     }
 }

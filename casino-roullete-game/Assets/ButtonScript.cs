@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Components;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,12 +11,14 @@ public class ButtonScript : MonoBehaviour
     public Sprite[] obj;
     public GameObject ab;
     ChipSelectInput c;
+    public Dictionary<string, string> myDictionary;
     
     void Start()
     {
         btn = GetComponent<Button>();
         btn.onClick.AddListener(InstantiateObject);
          c=ab.GetComponent<ChipSelectInput>();
+         myDictionary = new Dictionary<string, string>();
     }
 
     void InstantiateObject()

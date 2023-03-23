@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638146620630000000
+      ticks: 638142829382093986
     m_Hash: 2211190970
   m_LockFileStatus:
     m_FilePath: D:/Roulette Github/Roulette-new/casino-roullete-game/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638146620630000000
+      ticks: 638142829543569119
     m_Hash: 413552023
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -3708,6 +3708,7 @@ m_PackageAssets:
         - 4.2.0
         - 4.3.0
         - 4.4.0
+        - 4.4.1
         compatible:
         - 1.0.3
         - 1.0.4
@@ -3726,6 +3727,7 @@ m_PackageAssets:
         - 4.2.0
         - 4.3.0
         - 4.4.0
+        - 4.4.1
         verified: 4.1.0
       dependencies:
       - name: com.unity.ugui
