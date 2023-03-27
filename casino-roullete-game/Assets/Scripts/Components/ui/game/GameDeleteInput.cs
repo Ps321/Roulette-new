@@ -12,9 +12,19 @@ namespace Components
         public GameCmdFactory gameCmdFactory;
         public MagnetDestroyerDisplay magnetDestroyerDisplay;
 
+        public Animator aa;
+    
+    
+     public Animator table;
+     public GameObject roulette;
+
         public void OnClick()
         {
             gameCmdFactory.ResetTableTurn(magnetDestroyerDisplay, characterTable).Execute();
+            characterTable.currentTableActive.Value=false;
+            aa.SetBool("clicked",false);
+            table.SetBool("clicked",false);
+            roulette.SetActive(true);
         }
     }
 }

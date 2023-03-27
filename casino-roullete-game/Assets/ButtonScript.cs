@@ -2,10 +2,12 @@ using System.Collections.Generic;
 using Components;
 using UnityEngine;
 using UnityEngine.UI;
+using ViewModel;
 
 public class ButtonScript : MonoBehaviour
 {
     public GameObject objectToInstantiate;
+    public CharacterTable chartacterTable;
     private Button btn ;
 
     public Sprite[] obj;
@@ -15,6 +17,7 @@ public class ButtonScript : MonoBehaviour
     
     void Start()
     {
+
         btn = GetComponent<Button>();
         btn.onClick.AddListener(InstantiateObject);
          c=ab.GetComponent<ChipSelectInput>();

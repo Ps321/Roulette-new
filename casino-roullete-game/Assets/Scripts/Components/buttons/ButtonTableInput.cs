@@ -25,6 +25,7 @@ namespace Commands
         private IInteractableButton _interactableButton;
         public ILongPress _longPress;
        public GameObject ab;
+       int first=0;
          ChipSelectInput c;
         
          Dictionary<string,int> myDictionary;
@@ -64,10 +65,22 @@ namespace Commands
         {
             if (!_statusButton._isActive)
                 return;
+
+               
+
+               
+                
           
             animation.SetBool("clicked",true);
             table.SetBool("clicked",true);
             roulette.SetActive(false);
+            
+             if(ButtonDict.first==0){
+                    buttonData.currentOffset.y=0f;
+                   ButtonDict.first=1;
+                  return;
+                   
+                }
           
             buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
             if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
@@ -86,7 +99,11 @@ namespace Commands
             if (!_statusButton._isActive)
                 return;
 
-
+            if(ButtonDict.first==0){
+                ButtonDict.first=1;
+                    return;
+                }
+           
                 animation.SetBool("clicked",true);
                 table.SetBool("clicked",true);
                 roulette.SetActive(false);

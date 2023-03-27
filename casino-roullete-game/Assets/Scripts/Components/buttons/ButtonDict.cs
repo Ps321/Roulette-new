@@ -7,6 +7,8 @@ namespace Commands
      
     public class ButtonDict : MonoBehaviour
     {
+
+        public static int first=0;
          public Dictionary<string,int> myDictionary;
         // Start is called before the first frame update
         void Start()
@@ -14,10 +16,7 @@ namespace Commands
          myDictionary = new Dictionary<string, int>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
         
-        }
+       
     }
 }

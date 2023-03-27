@@ -6,15 +6,17 @@ using Components;
 using Commands;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ViewModel;
 
 public class Timer1 : MonoBehaviourPunCallbacks
 {
+     public CharacterTable chartacterTable;
     public float timerValue = 60.0f;
     public Animator aa;
     
     
-        public Animator table;
-        public GameObject roulette;
+     public Animator table;
+     public GameObject roulette;
     public Text textval;
     public bool enabletimer=false;
      public ButtonDict dd;
@@ -65,7 +67,8 @@ void Start()
             timerValue=60;
         }
 
-        if(timerValue==10){
+        if(timerValue<=10){
+            chartacterTable.currentTableActive.Value=false;
             aa.SetBool("clicked",false);
             table.SetBool("clicked",false);
             roulette.SetActive(true);
@@ -80,6 +83,10 @@ void Start()
             timerValue -= Time.deltaTime;
             photonView.RPC("UpdateTimer", RpcTarget.All, timerValue);
         }
+    }
+
+    public void NoMoreBet(){
+        chartacterTable.currentTableActive.Value=false;
     }
 
     public void mainlobby(){

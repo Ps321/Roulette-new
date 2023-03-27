@@ -23,7 +23,7 @@ GameObject:
   m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &1014787287201871223
 RectTransform:
@@ -138,8 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5ab9fbf34545fc41b062439ce01f80e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animation: {fileID: 0}
+  table: {fileID: 0}
+  roulette: {fileID: 0}
   characterTable: {fileID: 11400000, guid: dcf65df1e62d063479bad21d940e398d, type: 2}
   buttonData: {fileID: 0}
+  ab: {fileID: 0}
+  dd: {fileID: 0}
 --- !u!114 &2525589023311870915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCmdFactory: {fileID: 11400000, guid: f7ba5b05108593e45a6a994947132d78, type: 2}
+  empty: {fileID: 0}
+  gg: []
+  c: {fileID: 0}
 --- !u!114 &9194825869094601145
 MonoBehaviour:
   m_ObjectHideFlags: 0

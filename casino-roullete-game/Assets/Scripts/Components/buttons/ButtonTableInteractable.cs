@@ -20,6 +20,7 @@ namespace Commands
         public void InstantiateChip(CharacterTable characterTable, ButtonTable buttonData)
         {
             GameObject chipInstance = Instantiate(characterTable.chipPrefab);
+            buttonData.currentOffset.y=0.9f;
            if(c1.currentchipvalue==10){
             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[2];
         }
@@ -46,6 +47,7 @@ namespace Commands
         }
         
             chipInstance.SetActive(false);
+           
             gameCmdFactory.ButtonTableTurn(characterTable, chipInstance, buttonData).Execute();
         }
 
