@@ -12,6 +12,11 @@ namespace Commands
     [RequireComponent (typeof(Button))]
     public class ButtonTableInput : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     {
+
+        public Animator animation;
+        public Animator table;
+        public GameObject roulette;
+
         public CharacterTable characterTable;
         public ButtonTable buttonData;
 
@@ -59,6 +64,11 @@ namespace Commands
         {
             if (!_statusButton._isActive)
                 return;
+          
+            animation.SetBool("clicked",true);
+            table.SetBool("clicked",true);
+            roulette.SetActive(false);
+          
             buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
             if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
                 
@@ -75,6 +85,11 @@ namespace Commands
         {
             if (!_statusButton._isActive)
                 return;
+
+
+                animation.SetBool("clicked",true);
+                table.SetBool("clicked",true);
+                roulette.SetActive(false);
             buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
           if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
                 

@@ -10,8 +10,11 @@ using UnityEngine.SceneManagement;
 public class Timer1 : MonoBehaviourPunCallbacks
 {
     public float timerValue = 60.0f;
+    public Animator aa;
     
-
+    
+        public Animator table;
+        public GameObject roulette;
     public Text textval;
     public bool enabletimer=false;
      public ButtonDict dd;
@@ -59,7 +62,14 @@ void Start()
             {
                 Debug.Log(pair.Key + ": " + pair.Value);
             }
-            timerValue=80;
+            timerValue=60;
+        }
+
+        if(timerValue==10){
+            aa.SetBool("clicked",false);
+            table.SetBool("clicked",false);
+            roulette.SetActive(true);
+
         }
          }
     }
