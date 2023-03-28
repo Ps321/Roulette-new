@@ -12,6 +12,7 @@ namespace Components
         public GameRoullete gameRoullete;
         public GameObject ballRotator;
         public GameObject wheelRotator;
+        public Animator aa;
 
         void Start()
         {
@@ -30,8 +31,12 @@ namespace Components
         {
             
             if(gameRoullete.currentSpeed != gameRoullete.defaultSpeed){
+                aa.SetBool("diamond",true);
             wheelRotator.transform.Rotate(Vector3.forward * gameRoullete.currentSpeed * Time.deltaTime);
             ballRotator.transform.Rotate(Vector3.back * gameRoullete.currentSpeed * 3 * Time.deltaTime);  
+        }
+        else{
+           aa.SetBool("diamond",false);
         }
         }
     }

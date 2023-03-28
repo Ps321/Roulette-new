@@ -7,6 +7,7 @@ using ViewModel;
 public class ButtonScript : MonoBehaviour
 {
     public GameObject objectToInstantiate;
+    public GameObject parentobject;
     public CharacterTable chartacterTable;
     private Button btn ;
 
@@ -26,7 +27,7 @@ public class ButtonScript : MonoBehaviour
 
     void InstantiateObject()
     {
-        GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity);
+        GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity,parentobject.transform);
          gg.GetComponent<SpriteRenderer>().sprite=obj[2];
         if(c.currentchipvalue==10){
             gg.GetComponent<SpriteRenderer>().sprite=obj[2];

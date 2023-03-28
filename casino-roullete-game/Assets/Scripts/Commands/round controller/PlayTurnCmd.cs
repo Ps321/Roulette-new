@@ -52,22 +52,20 @@ namespace Commands
             gameRoullete.currentSpeed = 145f;
             PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[9]);
             yield return new WaitForSeconds(0.5f);
-            gameRoullete.currentSpeed = 240f;
-            yield return new WaitForSeconds(0.8f);
-            
-            gameRoullete.currentSpeed = 245f;
-            yield return new WaitForSeconds(1.0f);
-            gameRoullete.currentSpeed = 265;
+            gameRoullete.currentSpeed = 280f;
             yield return new WaitForSeconds(1.2f);
-            gameRoullete.currentSpeed = 245;
+            
+           
+            
+            gameRoullete.currentSpeed = 265;
             yield return new WaitForSeconds(0.8f);
             gameRoullete.currentSpeed = 240f;
-            yield return new WaitForSeconds(0.8f);
+            yield return new WaitForSeconds(0.2f);
             // Ball position
             gameRoullete.currentSpeed = 145;
             gameRoullete.OnNumber.OnNext(num);
 
-            yield return new WaitForSeconds(1.8f);
+            yield return new WaitForSeconds(4f);
             gameRoullete.currentSpeed = 75f;
    
             yield return new WaitForSeconds(0.5f);

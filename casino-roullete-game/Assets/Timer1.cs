@@ -13,6 +13,8 @@ public class Timer1 : MonoBehaviourPunCallbacks
      public CharacterTable chartacterTable;
     public float timerValue = 60.0f;
     public Animator aa;
+    public Animator Timer;
+     public Animator Betok;
     
     
      public Animator table;
@@ -22,6 +24,8 @@ public class Timer1 : MonoBehaviourPunCallbacks
      public ButtonDict dd;
 
     public GameObject a;
+
+    public Text messages1;
 
     [PunRPC]
     void UpdateTimer(float value)
@@ -45,27 +49,38 @@ void Start()
 
     }
 
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
+   
     void Update()
     {
+
         if(enabled==true){
             Countdown();
        
        /* if(timerValue==30){
             Application.Quit();
         }*/
-         textval.text="00:"+ Mathf.Round(timerValue).ToString();
+         textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
             StartCoroutine(cleardict());
             a.GetComponent<GamePlayInput>().OnClick();
              ButtonDict.first=0;
-            
+              chartacterTable.currentTableActive.Value=true;
             timerValue=60;
+          
+        }
+        if(ButtonDict.first==1 && timerValue>=10){
+            Betok.SetBool("betok",true);
+        }
+        else{
+            Betok.SetBool("betok",false);
+        }
+        if(timerValue<=15 &&  timerValue>=10){
+                Timer.SetBool("glow",true);
         }
 
         if(timerValue<=10){
+            
+            Timer.SetBool("glow",false);
             foreach (KeyValuePair<string, int> pair in ButtonDict.myDictionary)
             {
               //  Debug.Log(pair.Key + ": " + pair.Value);
@@ -76,7 +91,20 @@ void Start()
             roulette.SetActive(true);
 
         }
+        messages();
          }
+    }
+
+    void messages(){
+        if(ButtonDict.first==0){
+            messages1.text="Please Bet to start Game. MinimumBet=1";
+        }
+        if(ButtonDict.first==1){
+            messages1.text="Bet Now";
+        }
+        if(timerValue<=10){
+           messages1.text="Timer Up";
+        }
     }
     void Countdown()
     {
