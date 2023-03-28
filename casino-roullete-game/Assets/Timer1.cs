@@ -58,16 +58,18 @@ void Start()
         }*/
          textval.text="00:"+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+            StartCoroutine(cleardict());
             a.GetComponent<GamePlayInput>().OnClick();
+             ButtonDict.first=0;
             
-            foreach (KeyValuePair<string, int> pair in dd.myDictionary)
-            {
-                Debug.Log(pair.Key + ": " + pair.Value);
-            }
             timerValue=60;
         }
 
         if(timerValue<=10){
+            foreach (KeyValuePair<string, int> pair in ButtonDict.myDictionary)
+            {
+              //  Debug.Log(pair.Key + ": " + pair.Value);
+            }
             chartacterTable.currentTableActive.Value=false;
             aa.SetBool("clicked",false);
             table.SetBool("clicked",false);
@@ -85,6 +87,11 @@ void Start()
         }
     }
 
+
+        IEnumerator cleardict(){
+            yield return  new WaitForSeconds(5);
+            ButtonDict.myDictionary.Clear();
+        }
     public void NoMoreBet(){
         chartacterTable.currentTableActive.Value=false;
     }

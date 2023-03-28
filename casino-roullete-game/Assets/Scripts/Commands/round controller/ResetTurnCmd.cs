@@ -39,9 +39,9 @@ namespace Commands
         IEnumerator ResetRoundProcess(float seg)
         {
             characterTable.currentTableActive.Value = false;
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(0.1f);
             magnetDestroyerDisplay.magnetDestroyer.SetActive(true);
-            yield return new WaitForSeconds(seg);
+            yield return new WaitForSeconds(1.0f);
             magnetDestroyerDisplay.magnetDestroyer.SetActive(false);
             characterTable.currentTableActive.Value = true;
         }

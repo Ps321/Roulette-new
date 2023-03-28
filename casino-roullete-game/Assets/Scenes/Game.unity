@@ -4078,6 +4078,7 @@ GameObject:
   - component: {fileID: 348470018}
   - component: {fileID: 348470017}
   - component: {fileID: 348470019}
+  - component: {fileID: 348470020}
   m_Layer: 5
   m_Name: Coin_1000
   m_TagString: Untagged
@@ -4227,6 +4228,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 348470020}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &348470020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348470013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &377958980
 GameObject:
   m_ObjectHideFlags: 0
@@ -10392,6 +10446,7 @@ GameObject:
   - component: {fileID: 751768513}
   - component: {fileID: 751768512}
   - component: {fileID: 751768509}
+  - component: {fileID: 751768514}
   m_Layer: 5
   m_Name: Coin_10
   m_TagString: Untagged
@@ -10474,6 +10529,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 751768514}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &751768510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10494,7 +10561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10541,6 +10608,47 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &751768514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751768507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &754419935
 GameObject:
   m_ObjectHideFlags: 0
@@ -13814,7 +13922,7 @@ MonoBehaviour:
   characterTable: {fileID: 11400000, guid: dcf65df1e62d063479bad21d940e398d, type: 2}
   gameCmdFactory: {fileID: 11400000, guid: f7ba5b05108593e45a6a994947132d78, type: 2}
   magnetDestroyer: {fileID: 1826314840}
-  magnetTime: 4
+  magnetTime: 2
 --- !u!1 &985569632
 GameObject:
   m_ObjectHideFlags: 0
@@ -15045,6 +15153,7 @@ GameObject:
   - component: {fileID: 1063677936}
   - component: {fileID: 1063677935}
   - component: {fileID: 1063677937}
+  - component: {fileID: 1063677938}
   m_Layer: 5
   m_Name: Coin_5000
   m_TagString: Untagged
@@ -15194,6 +15303,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1063677938}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1063677938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063677931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1066363379
 GameObject:
   m_ObjectHideFlags: 0
@@ -17775,6 +17937,7 @@ GameObject:
   - component: {fileID: 1254827998}
   - component: {fileID: 1254827997}
   - component: {fileID: 1254827999}
+  - component: {fileID: 1254828000}
   m_Layer: 5
   m_Name: Coin_100
   m_TagString: Untagged
@@ -17924,6 +18087,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1254828000}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1254828000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254827993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1255096477
 GameObject:
   m_ObjectHideFlags: 0
@@ -18937,6 +19153,7 @@ GameObject:
   - component: {fileID: 1315052816}
   - component: {fileID: 1315052815}
   - component: {fileID: 1315052817}
+  - component: {fileID: 1315052818}
   m_Layer: 5
   m_Name: Coin_1
   m_TagString: Untagged
@@ -19086,6 +19303,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1315052818}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1315052818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315052811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1317565440
 GameObject:
   m_ObjectHideFlags: 0
@@ -20560,6 +20830,7 @@ GameObject:
   - component: {fileID: 1414601675}
   - component: {fileID: 1414601674}
   - component: {fileID: 1414601676}
+  - component: {fileID: 1414601677}
   m_Layer: 5
   m_Name: Coin_500
   m_TagString: Untagged
@@ -20709,6 +20980,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1414601677}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1414601677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414601670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1414747629
 GameObject:
   m_ObjectHideFlags: 0
@@ -27984,7 +28308,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -10
+  m_ForceMagnitude: -20
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
@@ -28207,6 +28531,7 @@ GameObject:
   - component: {fileID: 1833541309}
   - component: {fileID: 1833541308}
   - component: {fileID: 1833541310}
+  - component: {fileID: 1833541311}
   m_Layer: 5
   m_Name: Coin_5
   m_TagString: Untagged
@@ -28356,6 +28681,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1833541311}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1833541311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833541304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1843167699
 GameObject:
   m_ObjectHideFlags: 0
@@ -29135,6 +29513,7 @@ GameObject:
   - component: {fileID: 1876235814}
   - component: {fileID: 1876235813}
   - component: {fileID: 1876235815}
+  - component: {fileID: 1876235816}
   m_Layer: 5
   m_Name: Coin_50
   m_TagString: Untagged
@@ -29284,6 +29663,59 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1876235816}
+        m_TargetAssemblyTypeName: Buttons1, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1876235816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876235809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667de528baa49434b9ea2d08c216c7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalSprite:
+  - {fileID: 21300000, guid: 6ea76afe0694aa048a4d79633d0ba2d1, type: 3}
+  - {fileID: 21300000, guid: 5897b291e95a3f7458ea5d132f7fb4c3, type: 3}
+  - {fileID: 21300000, guid: dd91fc2fc046a974c9eb77b014ed8f20, type: 3}
+  - {fileID: 21300000, guid: ffee468c770e8884b9eb688dfc2e1d97, type: 3}
+  - {fileID: 21300000, guid: 8727408e995398441a74b8835617dc3b, type: 3}
+  - {fileID: 21300000, guid: c7055b59c0d95dd4799dae67fef37e1c, type: 3}
+  - {fileID: 21300000, guid: 27081288f08cb85469bd69a08864f553, type: 3}
+  - {fileID: 21300000, guid: f2dcf2064cf752c448bdd2354f6aa296, type: 3}
+  highlightedSprite:
+  - {fileID: 21300000, guid: 6eab02c06031abe49a18d5763933abef, type: 3}
+  - {fileID: 21300000, guid: 1cc1d27ff44813944b6b22fe2583141f, type: 3}
+  - {fileID: 21300000, guid: d164a91901f89cf45bbd5d6d736eefd0, type: 3}
+  - {fileID: 21300000, guid: 34707b3282fcd3947b6111a83c5292d7, type: 3}
+  - {fileID: 21300000, guid: 1ea7681a9255798479fbf8a2e3e5cdc1, type: 3}
+  - {fileID: 21300000, guid: 292f637dcd1675f429ce168701141c6f, type: 3}
+  - {fileID: 21300000, guid: 2055719c2182ed945a3a495c35b2f3a0, type: 3}
+  - {fileID: 21300000, guid: f7bba051f7eed8947bcdc111faa24cbb, type: 3}
+  bb:
+  - {fileID: 1315052817}
+  - {fileID: 1833541310}
+  - {fileID: 751768509}
+  - {fileID: 1876235815}
+  - {fileID: 1254827999}
+  - {fileID: 1414601676}
+  - {fileID: 348470019}
+  - {fileID: 1063677937}
+  c: 0
+  B: {fileID: 751768509}
 --- !u!1 &1881948260
 GameObject:
   m_ObjectHideFlags: 0
@@ -35023,7 +35455,7 @@ RectTransform:
   m_GameObject: {fileID: 6155301725026710295}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.4966, y: 1.4966, z: 1.4966}
+  m_LocalScale: {x: 1.73, y: 2.41, z: 1.4966}
   m_Children:
   - {fileID: 6155301726597057256}
   m_Father: {fileID: 6155301726755176174}
@@ -35031,7 +35463,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 310, y: -244}
+  m_AnchoredPosition: {x: 310, y: -266}
   m_SizeDelta: {x: 369, y: 78.4225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6155301725026710295
@@ -35045,6 +35477,7 @@ GameObject:
   - component: {fileID: 6155301725026710294}
   - component: {fileID: 6155301725026710292}
   - component: {fileID: 6155301725026710293}
+  - component: {fileID: 6155301725026710296}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -35052,6 +35485,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &6155301725026710296
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155301725026710295}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af578372765e8a04195588404a0ab97e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!222 &6155301725097534427
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36531,16 +36983,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6155301726597057257}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8650866, y: 0.6209958, z: 1}
   m_Children: []
   m_Father: {fileID: 6155301725026710294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.4, y: 0.9}
+  m_AnchoredPosition: {x: 2, y: -1.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6155301726597057257
@@ -46664,7 +47116,7 @@ PrefabInstance:
     - target: {fileID: 8648596727758346824, guid: c0234e2990dc8474ea356dea5070baaf,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8648596727758346826, guid: c0234e2990dc8474ea356dea5070baaf,
         type: 3}
@@ -46717,6 +47169,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 09a9e69206dd5bc439b528afa4e514cf,
         type: 3}
+    - target: {fileID: 8648596728038825079, guid: c0234e2990dc8474ea356dea5070baaf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8648596728318129884, guid: c0234e2990dc8474ea356dea5070baaf,
         type: 3}
       propertyPath: m_LocalScale.x

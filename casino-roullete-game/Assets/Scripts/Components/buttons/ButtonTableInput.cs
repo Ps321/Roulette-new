@@ -83,11 +83,11 @@ namespace Commands
                 }
           
             buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
-            if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
+            if(ButtonDict.myDictionary.ContainsKey(buttonData.buttonName)){
                 
-                dd.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop;
+                ButtonDict.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop+1;
             }else{
-                dd.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop);
+                ButtonDict.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop+1);
             }
 
 
@@ -108,11 +108,11 @@ namespace Commands
                 table.SetBool("clicked",true);
                 roulette.SetActive(false);
             buttonData.currentChipsOnTop= buttonData.currentChipsOnTop+ c.currentchipvalue -1;
-          if(dd.myDictionary.ContainsKey(buttonData.buttonName)){
+          if(ButtonDict.myDictionary.ContainsKey(buttonData.buttonName)){
                 
-                dd.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop;
+                ButtonDict.myDictionary[buttonData.buttonName]=buttonData.currentChipsOnTop+1;
             }else{
-                dd.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop);
+                ButtonDict.myDictionary.Add(buttonData.buttonName,buttonData.currentChipsOnTop+1);
             }
             _interactableButton.InstantiateChip1(characterTable, buttonData);
         }

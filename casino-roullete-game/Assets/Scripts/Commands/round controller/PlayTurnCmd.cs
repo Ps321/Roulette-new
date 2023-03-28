@@ -46,6 +46,53 @@ namespace Commands
             characterTable.currentTableActive.Value = false; // Desactivete table buttons
             gameRoullete.OnRotate.OnNext(true);
 
+            yield return new WaitForSeconds(0.2f);
+            gameRoullete.currentSpeed = 75f;
+            yield return new WaitForSeconds(0.8f);
+            gameRoullete.currentSpeed = 145f;
+            PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[9]);
+            yield return new WaitForSeconds(0.5f);
+            gameRoullete.currentSpeed = 240f;
+            yield return new WaitForSeconds(0.8f);
+            
+            gameRoullete.currentSpeed = 245f;
+            yield return new WaitForSeconds(1.0f);
+            gameRoullete.currentSpeed = 265;
+            yield return new WaitForSeconds(1.2f);
+            gameRoullete.currentSpeed = 245;
+            yield return new WaitForSeconds(0.8f);
+            gameRoullete.currentSpeed = 240f;
+            yield return new WaitForSeconds(0.8f);
+            // Ball position
+            gameRoullete.currentSpeed = 145;
+            gameRoullete.OnNumber.OnNext(num);
+
+            yield return new WaitForSeconds(1.8f);
+            gameRoullete.currentSpeed = 75f;
+   
+            yield return new WaitForSeconds(0.5f);
+            // Finish round
+            gameRoullete.currentSpeed = gameRoullete.defaultSpeed;
+            characterTable.OnRound.OnNext(false); 
+
+            // Intialize the payment system and display the news values
+            paymentGateway.PaymentSystem(characterTable)
+                .Delay(TimeSpan.FromSeconds(3))
+                .Do(_ => OnPayment(paymentGateway.PaymentValue))
+                .Do(_ => characterTable.OnWinButton.OnNext(num))
+                .Subscribe();
+        }
+
+        public void OnPayment(int value)
+        {
+            characterTable.characterMoney.currentPayment.Value = value;
+            characterTable.characterMoney.PaymentSystem(value);
+        }
+    }
+}
+
+
+/*
             yield return new WaitForSeconds(2.0f);
             gameRoullete.currentSpeed = 75f;
             yield return new WaitForSeconds(1.0f);
@@ -70,23 +117,4 @@ namespace Commands
             yield return new WaitForSeconds(1.8f);
             gameRoullete.currentSpeed = 75f;
    
-            yield return new WaitForSeconds(5.0f);
-            // Finish round
-            gameRoullete.currentSpeed = gameRoullete.defaultSpeed;
-            characterTable.OnRound.OnNext(false); 
-
-            // Intialize the payment system and display the news values
-            paymentGateway.PaymentSystem(characterTable)
-                .Delay(TimeSpan.FromSeconds(3))
-                .Do(_ => OnPayment(paymentGateway.PaymentValue))
-                .Do(_ => characterTable.OnWinButton.OnNext(num))
-                .Subscribe();
-        }
-
-        public void OnPayment(int value)
-        {
-            characterTable.characterMoney.currentPayment.Value = value;
-            characterTable.characterMoney.PaymentSystem(value);
-        }
-    }
-}
+            yield return new WaitForSeconds(5.0f);*/

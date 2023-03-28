@@ -29,7 +29,7 @@ namespace Components
         public void AnimateMainCamera(bool isRound)
         {
 
-            if(rotate){
+            
             if(isRound==true){
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(true);
@@ -38,7 +38,7 @@ namespace Components
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(false);
             }
-            }
+            
            // mainCameraAnimator.SetBool("Play", isRound);
         
         }
