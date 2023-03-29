@@ -39,10 +39,15 @@ namespace Commands
         IEnumerator ResetRoundProcess(float seg)
         {
             characterTable.currentTableActive.Value = false;
-            yield return new WaitForSeconds(0.1f);
-            magnetDestroyerDisplay.magnetDestroyer.SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-            magnetDestroyerDisplay.magnetDestroyer.SetActive(false);
+            yield return new WaitForSeconds(2.5f);
+             GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
+
+        // Loop through each object and look for a Button component
+        foreach (GameObject obj in objectsWithTag)
+        {
+           
+             ButtonDict.Destroykro(obj);
+        }
             characterTable.currentTableActive.Value = true;
         }
     }

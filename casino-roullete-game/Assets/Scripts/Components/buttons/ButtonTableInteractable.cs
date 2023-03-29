@@ -20,7 +20,8 @@ namespace Commands
         public void InstantiateChip(CharacterTable characterTable, ButtonTable buttonData)
         {
             GameObject chipInstance = Instantiate(characterTable.chipPrefab);
-            buttonData.currentOffset.y=0.7f;
+            chipInstance.GetComponent<ChipGame>().chipname=buttonData.name;
+            buttonData.currentOffset.y=ButtonDict.buttonoffset;
            if(c1.currentchipvalue==10){
             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[2];
         }

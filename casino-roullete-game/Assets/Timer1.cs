@@ -21,6 +21,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
      public GameObject roulette;
     public Text textval;
     public bool enabletimer=false;
+    bool betokclicked=false;
      public ButtonDict dd;
 
     public GameObject a;
@@ -61,14 +62,18 @@ void Start()
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+            ButtonDict.betok=false;
             StartCoroutine(cleardict());
             a.GetComponent<GamePlayInput>().OnClick();
              ButtonDict.first=0;
+             ButtonDict.buttonoffset=0.7f;
               chartacterTable.currentTableActive.Value=true;
             timerValue=60;
+            betokclicked=false;
           
         }
-        if(ButtonDict.first==1 && timerValue>=10){
+        if(ButtonDict.first==1 && timerValue>=10 && betokclicked==false){
+            
             Betok.SetBool("betok",true);
         }
         else{
@@ -121,10 +126,16 @@ void Start()
             ButtonDict.myDictionary.Clear();
         }
     public void NoMoreBet(){
+        ButtonDict.betok=true;
         chartacterTable.currentTableActive.Value=false;
+        betokclicked=true;
+        Betok.SetBool("betok",false);
+        aa.SetBool("clicked",false);
+            table.SetBool("clicked",false);
+            roulette.SetActive(true);
     }
 
     public void mainlobby(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

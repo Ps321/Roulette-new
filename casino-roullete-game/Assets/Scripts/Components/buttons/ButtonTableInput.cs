@@ -63,9 +63,27 @@ namespace Commands
 
         public void Click()
         {
-            if (!_statusButton._isActive)
-                return;
+            if (!_statusButton._isActive){
+                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
 
+        // Loop through each object and look for a Button component
+        foreach (GameObject obj in objectsWithTag)
+        {
+            string name = obj.GetComponent<ChipGame>().chipname;
+            name=name.Replace("Number_","");
+          
+            
+            if (buttonData.buttonName==name)
+            {
+                ButtonDict.myDictionary.Remove(buttonData.buttonName);
+                characterTable.characterMoney.AddCash2(buttonData.currentChipsOnTop);
+                // Enable the button
+                Destroy(obj);
+            }
+          
+        }
+                return;
+            }
                
 
                

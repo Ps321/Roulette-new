@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using Commands;
 using Controllers;
 
 namespace ViewModel
@@ -12,11 +13,28 @@ namespace ViewModel
         public IntReactiveProperty characterBet = new IntReactiveProperty();
         public IntReactiveProperty characterMoney = new IntReactiveProperty();
         public IntReactiveProperty currentPayment = new IntReactiveProperty();
+        public IntReactiveProperty currentWinnerValue = new IntReactiveProperty();
 
         // Operations in player money
         void AddCash(int cashWinner)
         {
             int aux = characterMoney.Value;
+            
+            //characterMoney.Value += cashWinner;
+           
+        }
+         public void AddCash1(int cashWinner)
+        {
+            int aux = characterMoney.Value;
+            
+            characterMoney.Value += cashWinner;
+            ButtonDict.winnerval=0;
+             currentWinnerValue.Value=0;
+            ButtonDict.updatekro=true;
+           
+        }
+        public void AddCash2(int cashWinner)
+        {
             characterMoney.Value += cashWinner;
         }
         
@@ -76,10 +94,15 @@ namespace ViewModel
 
             // If the player win when the round finish game will pay.
             // If not win it will stay with the same money without the bet.
-            if(payment > 0)
+            if(payment > 0){
                 AddCash(payment);
                 
-            Debug.Log($"Character player money is now being refresh with payment {payment}!");
+
+            ButtonDict.winnerval+=payment;
+            ButtonDict.updatekro=true;
+            currentWinnerValue.Value=ButtonDict.winnerval;
+             }
+              Debug.Log($"Character player money is now being refresh with payment {payment}!");
         }
     }
 }

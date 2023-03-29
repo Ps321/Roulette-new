@@ -19,6 +19,8 @@ namespace Components
         public Animator rouletteAnimator;
         public GameObject gg;
 
+        public Text winnerText;
+
         void Start()
         {
             characterTable.OnRound
@@ -35,6 +37,7 @@ namespace Components
                 gg.SetActive(true);
             }
             else{
+                winnerText.text= ButtonDict.winnerval.ToString();
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(false);
             }

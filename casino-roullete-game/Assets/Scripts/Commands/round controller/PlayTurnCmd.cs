@@ -54,9 +54,7 @@ namespace Commands
             yield return new WaitForSeconds(0.5f);
             gameRoullete.currentSpeed = 280f;
             yield return new WaitForSeconds(1.2f);
-            
            
-            
             gameRoullete.currentSpeed = 265;
             yield return new WaitForSeconds(0.8f);
             gameRoullete.currentSpeed = 240f;

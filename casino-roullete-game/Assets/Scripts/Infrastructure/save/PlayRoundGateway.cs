@@ -21,8 +21,82 @@ namespace Infrastructure
 
         public IObservable<Unit> PlayTurn()
         {
-            string keyWithLowestValue = ButtonDict.myDictionary.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
+            int lowestValue = int.MaxValue;
+            int lowestKey = -1;
+            randomNumber=-1;
+
+           
+
+            if(lowestValue==int.MaxValue){
+                Dictionary<string, int> dict = new Dictionary<string, int>();
+
+
+                if(ButtonDict.myDictionary.ContainsKey("12_1")){
+                    dict.Add("12_1",ButtonDict.myDictionary["12_1"]);
+                }
+                if(ButtonDict.myDictionary.ContainsKey("12_2")){
+                   dict.Add("12_2",ButtonDict.myDictionary["12_2"]);
+                }
+                if(ButtonDict.myDictionary.ContainsKey("12_3")){
+                   dict.Add("12_3",ButtonDict.myDictionary["12_3"]);
+                }
+                if(ButtonDict.myDictionary.ContainsKey("c1")){
+                    dict.Add("c1",ButtonDict.myDictionary["c1"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("c2")){
+                    dict.Add("c2",ButtonDict.myDictionary["c2"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("c3")){
+                    dict.Add("c3",ButtonDict.myDictionary["c3"]);
+                }
+
+                string keyWithLowestValue = dict.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
+           Debug.Log(keyWithLowestValue+"myarr");
+           if(keyWithLowestValue=="12_1"){
+            randomNumber=UnityEngine.Random.Range(1,13);
+           }
+           if(keyWithLowestValue=="12_2"){
+            randomNumber=UnityEngine.Random.Range(13,25);
+           }
+           if(keyWithLowestValue=="12_3"){
+            randomNumber=UnityEngine.Random.Range(25,37);
+           }
+           if(keyWithLowestValue=="c1"){
+            int val=UnityEngine.Random.Range(1,13);
+            randomNumber=ButtonDict.c1[val];
+           }
+           if(keyWithLowestValue=="c2"){
+            int val=UnityEngine.Random.Range(1,13);
+            randomNumber=ButtonDict.c2[val];
+           }
+           if(keyWithLowestValue=="c3"){
+            int val=UnityEngine.Random.Range(1,13);
+            randomNumber=ButtonDict.c3[val];
+           }
+            }
+
+            if(randomNumber==-1){
+
+                 for (int i = 0; i <= 36; i++) {
+                string s=i.ToString();
+                if(ButtonDict.myDictionary.ContainsKey(s)){
+               if( ButtonDict.myDictionary[s]<lowestValue){
+                lowestValue = ButtonDict.myDictionary[i.ToString()];
+                randomNumber = i;
+               }
+                }
+            }
+
+
+            }
+
+            if(randomNumber==-1){
+                 randomNumber=UnityEngine.Random.Range(0,37);
+            }
+           /* string keyWithLowestValue = ButtonDict.myDictionary.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
             Debug.Log(keyWithLowestValue+"myarr");
+            
+           if(keyWithLowestValue!=""){ 
             
             randomNumber  = int.Parse(keyWithLowestValue);
             int[] myarr=new int[36];
@@ -37,6 +111,11 @@ namespace Infrastructure
                     myarr[index]=i;
                 }
             }
+           }
+           else{
+            randomNumber=UnityEngine.Random.Range(0,36);
+           }*/
+        
          /* randomNumber=Random.Range(0,2);
           
             while(myarr[randomNumber]==-1){

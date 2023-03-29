@@ -27,6 +27,7 @@ public class ButtonScript : MonoBehaviour
 
     void InstantiateObject()
     {
+        if(chartacterTable.currentTableActive.Value){
         GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity,parentobject.transform);
          gg.GetComponent<SpriteRenderer>().sprite=obj[2];
         if(c.currentchipvalue==10){
@@ -52,6 +53,7 @@ public class ButtonScript : MonoBehaviour
         }
         else if(c.currentchipvalue==5000){
             gg.GetComponent<SpriteRenderer>().sprite=obj[7];
+        }
         }
         
     }
