@@ -16,6 +16,7 @@ namespace Components
         public GameCmdFactory gameCmdFactory;
         public void OnClick() 
         {
+            if(ButtonDict.buttonenable){
             if(ButtonDict.betok == false){
             characterTable.currentTableActive.Value=!characterTable.currentTableActive.Value;
             if(characterTable.currentTableActive.Value){
@@ -32,4 +33,5 @@ namespace Components
            // gameCmdFactory.UndoTableTurn(characterTable).Execute();
         }
     }
+}
 }

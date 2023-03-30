@@ -62,10 +62,12 @@ void Start()
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+             ButtonDict.buttonenable=true;
             ButtonDict.betok=false;
             StartCoroutine(cleardict());
             a.GetComponent<GamePlayInput>().OnClick();
              ButtonDict.first=0;
+             ButtonDict.first_1=0;
              ButtonDict.buttonoffset=0.7f;
               chartacterTable.currentTableActive.Value=true;
             timerValue=60;
@@ -84,7 +86,7 @@ void Start()
         }
 
         if(timerValue<=10){
-            
+            ButtonDict.buttonenable=false;
             Timer.SetBool("glow",false);
             foreach (KeyValuePair<string, int> pair in ButtonDict.myDictionary)
             {

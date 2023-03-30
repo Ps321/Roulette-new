@@ -28,7 +28,10 @@ public class ButtonScript : MonoBehaviour
 
     void InstantiateObject()
     {
-       
+       if(ButtonDict.first_1==0){
+        ButtonDict.first_1=1;
+        return;
+       }
 
         if(chartacterTable.currentTableActive.Value){
         GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity,parentobject.transform);
@@ -60,7 +63,7 @@ public class ButtonScript : MonoBehaviour
         }
         }
         else{
-                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
+        GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
 
         // Loop through each object and look for a Button component
         foreach (GameObject obj in objectsWithTag)

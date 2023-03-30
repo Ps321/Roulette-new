@@ -20,6 +20,7 @@ namespace Components
 
         public void OnClick()
         {
+            if(ButtonDict.buttonenable){
             if(ButtonDict.betok==false){
 
             ButtonDict.first=0;
@@ -40,4 +41,5 @@ namespace Components
         }
     }
     }
+}
 }
