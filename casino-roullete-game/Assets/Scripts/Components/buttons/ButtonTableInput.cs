@@ -70,7 +70,8 @@ namespace Commands
         foreach (GameObject obj in objectsWithTag)
         {
             string name = obj.GetComponent<ChipGame>().chipname;
-            name=name.Replace("Number_","");
+            Debug.Log(buttonData.buttonName);
+          //  name=name.Replace("Number_","");
           
             
             if (buttonData.buttonName==name)

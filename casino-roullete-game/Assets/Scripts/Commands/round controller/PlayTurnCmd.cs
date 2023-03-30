@@ -28,9 +28,11 @@ namespace Commands
 
         public void Execute()
         {
-            if(characterTable.currentTableCount <= 0)
+           /* if(characterTable.currentTableCount <= 0)
+            {
+                Debug.Log("idhr");
                 return;
-            
+            }*/
             Debug.Log($"The game roullete is executing in {characterTable.tableName} with {characterTable.currentTableCount} chips in table!");
             PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[7]);
 
@@ -55,12 +57,12 @@ namespace Commands
             gameRoullete.currentSpeed = 280f;
             yield return new WaitForSeconds(1.2f);
            
-            gameRoullete.currentSpeed = 265;
+            gameRoullete.currentSpeed = 265f;
             yield return new WaitForSeconds(0.8f);
             gameRoullete.currentSpeed = 240f;
             yield return new WaitForSeconds(0.2f);
             // Ball position
-            gameRoullete.currentSpeed = 145;
+            gameRoullete.currentSpeed = 145f;
             gameRoullete.OnNumber.OnNext(num);
 
             yield return new WaitForSeconds(4f);
@@ -71,7 +73,7 @@ namespace Commands
             gameRoullete.currentSpeed = gameRoullete.defaultSpeed;
             characterTable.OnRound.OnNext(false); 
 
-            // Intialize the payment system and display the news values
+           
             paymentGateway.PaymentSystem(characterTable)
                 .Delay(TimeSpan.FromSeconds(3))
                 .Do(_ => OnPayment(paymentGateway.PaymentValue))

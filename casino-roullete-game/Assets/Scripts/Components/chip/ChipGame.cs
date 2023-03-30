@@ -42,8 +42,6 @@ namespace Components
             
             PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[4]);
         }
-        private void OnTriggerEnter2D(Collider2D other) {
-            Debug.Log("aaya");
-        }
+       
     }
 }

@@ -36,6 +36,7 @@ namespace Components
         {
             Destroy(obj);
         }
+        characterTable.currentTableActive.Value=true;
         }
     }
     }

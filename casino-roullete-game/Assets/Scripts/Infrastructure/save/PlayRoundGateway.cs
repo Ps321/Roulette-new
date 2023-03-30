@@ -21,13 +21,35 @@ namespace Infrastructure
 
         public IObservable<Unit> PlayTurn()
         {
+
+
             int lowestValue = int.MaxValue;
             int lowestKey = -1;
             randomNumber=-1;
 
-           
+               Dictionary<string, int> dict1 = new Dictionary<string, int>();
+                 if(ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1")){
+                    dict1.Add("E1_Eightteen_1",ButtonDict.myDictionary["E1_Eightteen_1"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2")){
+                    dict1.Add("E1_Eightteen_2",ButtonDict.myDictionary["E1_Eightteen_2"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("E2_Black")){
+                    dict1.Add("E2_Black",ButtonDict.myDictionary["E2_Black"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("E2_Red")){
+                    dict1.Add("E2_Red",ButtonDict.myDictionary["E2_Red"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("E_Even")){
+                    dict1.Add("E_Even",ButtonDict.myDictionary["E_Even"]);
+                }
+                 if(ButtonDict.myDictionary.ContainsKey("E_Odd")){
+                    dict1.Add("E_Odd",ButtonDict.myDictionary["E_Odd"]);
+                }
+            string keyWithLowestValue1 = dict1.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
 
-            if(lowestValue==int.MaxValue){
+
+           
                 Dictionary<string, int> dict = new Dictionary<string, int>();
 
 
@@ -51,29 +73,68 @@ namespace Infrastructure
                 }
 
                 string keyWithLowestValue = dict.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
-           Debug.Log(keyWithLowestValue+"myarr");
-           if(keyWithLowestValue=="12_1"){
+          
+                string proceed="";
+        
+        if(keyWithLowestValue!="" && keyWithLowestValue1!=""){
+            if(ButtonDict.myDictionary[keyWithLowestValue]*2 < ButtonDict.myDictionary[keyWithLowestValue1])
+            {
+                proceed=keyWithLowestValue;
+            }
+            else{
+                proceed=keyWithLowestValue1;
+            }
+        }
+        
+        
+        
+        
+        
+           if(proceed=="12_1"){
             randomNumber=UnityEngine.Random.Range(1,13);
            }
-           if(keyWithLowestValue=="12_2"){
+           if(proceed=="12_2"){
             randomNumber=UnityEngine.Random.Range(13,25);
            }
-           if(keyWithLowestValue=="12_3"){
+           if(proceed=="12_3"){
             randomNumber=UnityEngine.Random.Range(25,37);
            }
-           if(keyWithLowestValue=="c1"){
+           if(proceed=="c1"){
             int val=UnityEngine.Random.Range(1,13);
             randomNumber=ButtonDict.c1[val];
            }
-           if(keyWithLowestValue=="c2"){
-            int val=UnityEngine.Random.Range(1,13);
+           if(proceed=="c2"){
+            int val=UnityEngine.Random.Range(0,13);
             randomNumber=ButtonDict.c2[val];
            }
-           if(keyWithLowestValue=="c3"){
-            int val=UnityEngine.Random.Range(1,13);
+           if(proceed=="c3"){
+            int val=UnityEngine.Random.Range(0,13);
             randomNumber=ButtonDict.c3[val];
            }
-            }
+
+           if(proceed=="E1_Eightteen_1"){
+            randomNumber=UnityEngine.Random.Range(1,19);
+           }
+           if(proceed=="E1_Eightteen_2"){
+            randomNumber=UnityEngine.Random.Range(18,37);
+           }
+           if(proceed=="E2_Black"){
+             int val=UnityEngine.Random.Range(0,18);
+            randomNumber=ButtonDict.black[val];
+           }
+           if(proceed=="E2_Red"){
+            int val=UnityEngine.Random.Range(0,18);
+            randomNumber=ButtonDict.red[val];
+           }
+           if(proceed=="E_Even"){
+           randomNumber=UnityEngine.Random.Range(0,19)*2;
+           
+           }
+           if(proceed=="E_Odd"){
+            randomNumber=(UnityEngine.Random.Range(0,19)*2)+1;
+          
+           }
+            
 
             if(randomNumber==-1){
 
