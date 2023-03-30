@@ -55,6 +55,7 @@ namespace Commands
         public void InstantiateChip1(CharacterTable characterTable, ButtonTable buttonData)
         {
             GameObject chipInstance = Instantiate(empty);
+            chipInstance.GetComponent<ChipGame>().chipname=buttonData.name;
             chipInstance.SetActive(false);
             gameCmdFactory.ButtonTableTurn(characterTable, chipInstance, buttonData).Execute();
         }

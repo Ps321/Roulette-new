@@ -76,7 +76,7 @@ namespace Infrastructure
           
                 string proceed="";
         
-        if(keyWithLowestValue!="" && keyWithLowestValue1!=""){
+        if(keyWithLowestValue!="" && keyWithLowestValue1!=""  && keyWithLowestValue!=null && keyWithLowestValue1!=null ){
             if(ButtonDict.myDictionary[keyWithLowestValue]*2 < ButtonDict.myDictionary[keyWithLowestValue1])
             {
                 proceed=keyWithLowestValue;
@@ -85,8 +85,12 @@ namespace Infrastructure
                 proceed=keyWithLowestValue1;
             }
         }
-        
-        
+        else if(keyWithLowestValue!=""  && keyWithLowestValue!=null){
+            proceed=keyWithLowestValue;
+        }        
+        else{
+             proceed=keyWithLowestValue1;
+        }
         
         
         

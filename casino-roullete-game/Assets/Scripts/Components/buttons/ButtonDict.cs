@@ -12,6 +12,7 @@ namespace Commands
         public CharacterTable characterTable;
 
         public static int first=0;
+        public static bool cancelbet=false;
 
         public static int winnerval=0;
         public static float buttonoffset=0.7f;

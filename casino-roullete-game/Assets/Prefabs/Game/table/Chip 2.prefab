@@ -155,6 +155,7 @@ MonoBehaviour:
   chipsContainer: {fileID: 0}
   spriteRenderer: {fileID: 5255888387336823750}
   characterTable: {fileID: 11400000, guid: dcf65df1e62d063479bad21d940e398d, type: 2}
+  chipname: 
 --- !u!114 &3445803385902407167
 MonoBehaviour:
   m_ObjectHideFlags: 0

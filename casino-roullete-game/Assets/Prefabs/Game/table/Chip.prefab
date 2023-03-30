@@ -149,6 +149,7 @@ MonoBehaviour:
   chipsContainer: {fileID: 0}
   spriteRenderer: {fileID: 5255888387336823750}
   characterTable: {fileID: 11400000, guid: dcf65df1e62d063479bad21d940e398d, type: 2}
+  chipname: 
 --- !u!114 &3445803385902407167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,16 +205,4 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8453059800705662724}
-        m_TargetAssemblyTypeName: Components.ChipGame, Scripts
-        m_MethodName: DestroyChip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []

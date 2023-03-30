@@ -19,9 +19,11 @@ namespace Components
             if(ButtonDict.betok == false){
             characterTable.currentTableActive.Value=!characterTable.currentTableActive.Value;
             if(characterTable.currentTableActive.Value){
+                ButtonDict.cancelbet=false;
                 gameObject.GetComponent<Image>().sprite=sprites[0];
             }
             else{
+                ButtonDict.cancelbet=true;
                 gameObject.GetComponent<Image>().sprite=sprites[1];
             }
             

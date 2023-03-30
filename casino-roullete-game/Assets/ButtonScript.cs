@@ -3,6 +3,7 @@ using Components;
 using UnityEngine;
 using UnityEngine.UI;
 using ViewModel;
+using Commands;
 
 public class ButtonScript : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class ButtonScript : MonoBehaviour
     
     void Start()
     {
-
+        
         btn = GetComponent<Button>();
         btn.onClick.AddListener(InstantiateObject);
          c=ab.GetComponent<ChipSelectInput>();
@@ -27,9 +28,12 @@ public class ButtonScript : MonoBehaviour
 
     void InstantiateObject()
     {
+       
+
         if(chartacterTable.currentTableActive.Value){
         GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity,parentobject.transform);
          gg.GetComponent<SpriteRenderer>().sprite=obj[2];
+         gg.GetComponent<ChipGame>().chipname=btn.name;
         if(c.currentchipvalue==10){
             gg.GetComponent<SpriteRenderer>().sprite=obj[2];
         }
@@ -55,6 +59,27 @@ public class ButtonScript : MonoBehaviour
             gg.GetComponent<SpriteRenderer>().sprite=obj[7];
         }
         }
+        else{
+                 GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
+
+        // Loop through each object and look for a Button component
+        foreach (GameObject obj in objectsWithTag)
+        {
+            string name = obj.GetComponent<ChipGame>().chipname;
+           
+          //  name=name.Replace("Number_","");
+          
+            
+            if (btn.name==name)
+            {
+               // ButtonDict.myDictionary.Remove(buttonData.buttonName);
+              //  characterTable.characterMoney.AddCash2(buttonData.currentChipsOnTop);
+                // Enable the button
+                Destroy(obj);
+            }
+          
+        }
         
     }
+}
 }

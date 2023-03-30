@@ -115,8 +115,29 @@ namespace Commands
         }
         public void Click1()
         {
-            if (!_statusButton._isActive)
+            if (!_statusButton._isActive){
+               GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
+
+        // Loop through each object and look for a Button component
+        foreach (GameObject obj in objectsWithTag)
+        {
+            string name = obj.GetComponent<ChipGame>().chipname;
+            Debug.Log(buttonData.buttonName);
+          //  name=name.Replace("Number_","");
+          
+            
+            if (buttonData.buttonName==name)
+            {
+                ButtonDict.myDictionary.Remove(buttonData.buttonName);
+                characterTable.characterMoney.AddCash2(buttonData.currentChipsOnTop);
+                // Enable the button
+                Destroy(obj);
+            }
+          
+        }
+             
                 return;
+            }
 
             if(ButtonDict.first==0){
                 ButtonDict.first=1;
@@ -143,7 +164,7 @@ namespace Commands
 
         private void Update ()
         {
-            _longPress.LongPressCheck(characterTable, buttonData);
+      //      _longPress.LongPressCheck(characterTable, buttonData);
         }
         
         public  void OnPointerUp (PointerEventData eventData) 
