@@ -142,7 +142,7 @@ namespace Infrastructure
 
             if(randomNumber==-1){
 
-                 for (int i = 0; i <= 36; i++) {
+                 for (int i = 0; i <= 37; i++) {
                 string s=i.ToString();
                 if(ButtonDict.myDictionary.ContainsKey(s)){
                if( ButtonDict.myDictionary[s]<lowestValue){

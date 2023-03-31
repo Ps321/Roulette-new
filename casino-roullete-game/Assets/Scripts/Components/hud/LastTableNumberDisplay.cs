@@ -80,6 +80,9 @@ namespace Components
         
         private GameObject GetNumberObject(int value)
         {
+            if(value==37){
+                value=36;
+            }
             GameObject num = Instantiate(numberContainer.transform.GetChild(value).gameObject);
             num.transform.localPosition = FindNumberPosition(0);
             num.GetComponent<LeanTweenScale>()._scaleXYZ = NumberDisplayConfig._biggerScale;
