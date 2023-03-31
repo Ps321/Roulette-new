@@ -162,7 +162,7 @@ namespace Commands
         }
 
             IEnumerator disabletable(){
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1.5f);
                 characterTable.currentTableActive.Value=true;
             }
         public void OnPointerDown (PointerEventData eventData) 

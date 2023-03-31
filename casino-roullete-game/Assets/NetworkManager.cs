@@ -4,6 +4,7 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    public GameObject loading;
     void Start()
     {
         // Connect to Photon servers
@@ -26,5 +27,6 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined room " + PhotonNetwork.CurrentRoom.Name);
         gameObject.GetComponent<Timer1>().enabled=true;
+        loading.SetActive(false);
     }
 }

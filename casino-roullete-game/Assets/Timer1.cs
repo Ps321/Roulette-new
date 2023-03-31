@@ -7,6 +7,7 @@ using Commands;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using ViewModel;
+using System;
 
 public class Timer1 : MonoBehaviourPunCallbacks
 {
@@ -55,20 +56,27 @@ void Start()
     {
 
         if(enabled==true){
-            Countdown();
-       
+           DateTime now = DateTime.Now;
+        int seconds = now.Second;
+        timerValue = 60 - seconds;
+        if(timerValue==60)
+        {
+            timerValue=0;
+            enabled=false;
+        }
        /* if(timerValue==30){
             Application.Quit();
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+            Debug.Log("aaya");
              ButtonDict.buttonenable=true;
             ButtonDict.betok=false;
             StartCoroutine(cleardict());
             a.GetComponent<GamePlayInput>().OnClick();
              ButtonDict.first=0;
              ButtonDict.first_1=0;
-             ButtonDict.buttonoffset=0.7f;
+             ButtonDict.buttonoffset=0f;
               chartacterTable.currentTableActive.Value=true;
             timerValue=60;
             betokclicked=false;
@@ -98,10 +106,16 @@ void Start()
             roulette.SetActive(true);
 
         }
+        if(enabled==false){
+            StartCoroutine(enableit());
+        }
         messages();
          }
     }
-
+    IEnumerator enableit(){
+        yield return new WaitForSeconds(1);
+        enabled=true;
+    }
     void messages(){
         if(ButtonDict.first==0){
             messages1.text="Please Bet to start Game. MinimumBet=1";
