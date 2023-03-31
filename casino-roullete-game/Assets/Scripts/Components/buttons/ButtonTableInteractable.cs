@@ -21,7 +21,7 @@ namespace Commands
         {
             GameObject chipInstance = Instantiate(characterTable.chipPrefab);
             chipInstance.GetComponent<ChipGame>().chipname=buttonData.name;
-            buttonData.currentOffset.y=ButtonDict.buttonoffset;
+            buttonData.currentOffset.y=0;
            if(c1.currentchipvalue==10){
             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[2];
         }

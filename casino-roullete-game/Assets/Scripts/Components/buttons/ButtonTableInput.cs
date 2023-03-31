@@ -5,7 +5,7 @@ using ViewModel;
 using UniRx;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using System.Collections;
 
 namespace Commands
 {
@@ -95,6 +95,8 @@ namespace Commands
             roulette.SetActive(false);
             
              if(ButtonDict.first==0){
+                characterTable.currentTableActive.Value=false;
+                StartCoroutine(disabletable());
                     buttonData.currentOffset.y=0f;
                    ButtonDict.first=1;
                   return;
@@ -140,6 +142,8 @@ namespace Commands
             }
 
             if(ButtonDict.first==0){
+                  characterTable.currentTableActive.Value=false;
+                StartCoroutine(disabletable());
                 ButtonDict.first=1;
                     return;
                 }
@@ -157,6 +161,10 @@ namespace Commands
             _interactableButton.InstantiateChip1(characterTable, buttonData);
         }
 
+            IEnumerator disabletable(){
+                yield return new WaitForSeconds(1);
+                characterTable.currentTableActive.Value=true;
+            }
         public void OnPointerDown (PointerEventData eventData) 
         {
             _longPress.SetPointerDown(true);   
