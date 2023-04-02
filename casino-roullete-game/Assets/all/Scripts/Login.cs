@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -23,12 +24,36 @@ public class Login : MonoBehaviour
     }
 
     public void login1(){
-        if(username.text=="demo1" && password.text=="1234"){
-          SceneManager.LoadScene(2);
+       StartCoroutine(Login2(username.text,password.text));
+    }
+ IEnumerator Login2(string username, string password)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("loginUser", username);
+        form.AddField("loginPass", password);
 
-        }
-        else{
-            Debug.Log("Incorrect");
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/login1.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Debug.Log(www.downloadHandler.text);
+                string s= www.downloadHandler.text.Trim();
+                if(s=="Error"){
+                    
+                }
+                else{
+                    Debug.Log(s); //Output 1
+                    PlayerPrefs.SetInt("id",int.Parse(s.ToString()));
+                    SceneManager.LoadScene(2);
+                }
+            }
         }
     }
 

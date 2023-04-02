@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 using ViewModel;
 
@@ -12,6 +13,8 @@ namespace Commands
         public CharacterTable characterTable;
 
         public static int first=0;
+        public static int loadedfirst=0;
+        public static int lastfive=0;
         public static int first_1=0;
         public static bool cancelbet=false;
 
@@ -47,13 +50,37 @@ namespace Commands
 
         public void Take(){
            characterTable.characterMoney.AddCash1(characterTable.characterMoney.currentWinnerValue.Value);
+            StartCoroutine(insertpoints());
         }
 
         public static void Destroykro(GameObject obj){
             Destroy(obj);
         }
 
+        IEnumerator insertpoints(){
+            yield return new WaitForSeconds(0.5f);
+            WWWForm form = new WWWForm();
+        form.AddField("id", PlayerPrefs.GetInt("id"));
+        form.AddField("points", characterTable.characterMoney.getmoney());
+        
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/pointsupdate.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("update points");            }
+        }
+        }
+    }
+
         
        
     }
-}
+

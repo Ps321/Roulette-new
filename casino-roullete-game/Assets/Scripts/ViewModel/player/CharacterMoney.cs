@@ -23,6 +23,9 @@ namespace ViewModel
             //characterMoney.Value += cashWinner;
            
         }
+        public int getmoney(){
+            return characterMoney.Value;
+        }
          public void AddCash1(int cashWinner)
         {
             int aux = characterMoney.Value;

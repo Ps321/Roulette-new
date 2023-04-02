@@ -39,11 +39,11 @@ namespace Components
         }
         public void OnPressed(LongPress longPress) 
         {
-            if(!buttonData.isPleno)
+           /* if(!buttonData.isPleno)
                 return;
                 
             if(CheckIfIsLongPressed(longPress.values))          
-                FxPressed(longPress.isPressed);
+                FxPressed(longPress.isPressed);*/
         }
         public bool CheckIfIsLongPressed(int[] longPressValues)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using ViewModel;
 using UniRx;
 using System.Linq;
@@ -55,8 +56,38 @@ namespace Components
             _sphere.transform.SetParent(sphereContainer.transform);
 
             Debug.Log($"Roullete positioning ball in number {num}!");
+            StartCoroutine(lastfivenumber(num));
         }
 
+        IEnumerator lastfivenumber(int value){
+           
+            WWWForm form = new WWWForm();
+            if(value==37){
+             form.AddField("number", "00");         
+            }else{
+                form.AddField("number", value.ToString());
+            }
+       
+        
+        
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/lastfive.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("update points");        
+                
+           }
+        }
+        }
+    
         void DestroyLastSphere()
         {
             if(sphereContainer.transform.childCount > 0)
@@ -64,3 +95,4 @@ namespace Components
         }
     }
 }
+

@@ -5,6 +5,7 @@ using ViewModel;
 using UniRx;
 using Components;
 using System.Linq;
+using Commands;
 using System;
 
 namespace Infrastructure
@@ -36,12 +37,13 @@ namespace Infrastructure
             int paymentLost = PaymentHandler.GetPaymentBack(_chipsLosted.ToArray());
             int paymentChipsReturn = PaymentHandler.GetPaymentBack(_chipsWinner.ToArray());
 
-            _payment = paymentWin - (paymentLost);
+            _payment = paymentWin;
             _payment = _payment + paymentChipsReturn;
-
+               ButtonDict.lastfive=1;
             return Observable.Return(Unit.Default)
                 .Do(_ => Debug.Log($"Win: {paymentWin}, Lost: {paymentLost}, Chips: {paymentChipsReturn}"))
                 .Do(_ => Debug.Log($"The roullete pay: {_payment}"));
+             
         }
     }
 

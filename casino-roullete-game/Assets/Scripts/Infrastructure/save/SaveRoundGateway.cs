@@ -6,6 +6,7 @@ using ViewModel;
 using System.Collections;
 using Managers;
 using UnityEngine.Networking;
+using Commands;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -42,6 +43,8 @@ namespace Infrastructure
 
         IEnumerator LoadPlayer(IObserver<Unit> observer) 
         {
+
+               ButtonDict.lastfive=1;
             string path = GameManager.Instance.UrlDataPath + FILE_NAME;
             string json = File.ReadAllText(path);
 
@@ -50,6 +53,34 @@ namespace Infrastructure
             roundData = JsonUtility.FromJson<Round>(json);
             Debug.Log($"Loaded data JSON with the table {roundData.idPlayer} with {json}");
 
+               WWWForm form = new WWWForm();
+        form.AddField("id", PlayerPrefs.GetInt("id"));
+       
+        
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/readpoints.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string s= www.downloadHandler.text.Trim();   
+                roundData.playerMoney=  int.Parse(s);
+                ButtonDict.loadedfirst=1;   
+                Debug.Log("Score has been fetched from database");
+                
+             }
+        }
+
+
+
+
+            
             observer.OnNext(Unit.Default); // push Unit or all buffer result.
             observer.OnCompleted();
         }

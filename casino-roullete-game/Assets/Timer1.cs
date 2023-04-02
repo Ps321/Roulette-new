@@ -36,7 +36,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
        
        
     }
-
+    
 void Start()
     {
         // Initialize the timer value for all clients

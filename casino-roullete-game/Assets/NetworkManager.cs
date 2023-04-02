@@ -1,6 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Commands;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
@@ -27,6 +28,11 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     {
         Debug.Log("Joined room " + PhotonNetwork.CurrentRoom.Name);
         gameObject.GetComponent<Timer1>().enabled=true;
-        loading.SetActive(false);
+        
+    }
+    private void Update() {
+        if(ButtonDict.loadedfirst==1){
+            loading.SetActive(false);
+        }
     }
 }
