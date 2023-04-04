@@ -16,6 +16,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
     public Animator aa;
     public Animator Timer;
      public Animator Betok;
+   
     
     
      public Animator table;
@@ -85,6 +86,7 @@ void Start()
         if(ButtonDict.first==1 && timerValue>=10 && betokclicked==false){
             
             Betok.SetBool("betok",true);
+           
         }
         else{
             Betok.SetBool("betok",false);

@@ -62,11 +62,10 @@ namespace Components
         IEnumerator lastfivenumber(int value){
            
             WWWForm form = new WWWForm();
-            if(value==37){
-             form.AddField("number", "00");         
-            }else{
+            
+            
                 form.AddField("number", value.ToString());
-            }
+            
        
         
         

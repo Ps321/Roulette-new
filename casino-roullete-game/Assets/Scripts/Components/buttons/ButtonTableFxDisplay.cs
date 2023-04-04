@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ViewModel;
 using UniRx;
+using Commands;
 using System;
 using System.Linq;
 
@@ -25,6 +26,11 @@ namespace Components
                 .AddTo(this);
         }
 
+        private void Update() {
+            if(ButtonDict.first==1){
+                 animatorButton.SetBool("win",false);
+            }
+        }
         private void OnWin(int num)
         {
             if(!buttonData.isPleno)
@@ -56,7 +62,7 @@ namespace Components
 
         public void FxWin()
         {
-            animatorButton.SetTrigger("Win");
+            animatorButton.SetBool("win",true);
         }
         public void FxPressed(bool isPress)
         {
