@@ -7,24 +7,21 @@ using Commands;
 public class winoptions : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Start()
     {
         if(ButtonDict.rulefetch==0){
             ButtonDict.rulefetch=1;
-            StartCoroutine(Lobby());
+            StartCoroutine(rulefetch());
         }
     }
 
-     IEnumerator Lobby()
+     IEnumerator rulefetch()
     {
         WWWForm form = new WWWForm();
-        form.AddField("id", PlayerPrefs.GetInt("id"));
+       
         
 
 

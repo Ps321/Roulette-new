@@ -57,7 +57,7 @@ public class lastfive : MonoBehaviour
                 t[4].text=a[0];
                 t[4].color=chckcolor(int.Parse(a[0]));
                 Debug.Log("Score has been fetched from database");
-                
+                StartCoroutine(storeround());
              }
         }
 
@@ -65,6 +65,34 @@ public class lastfive : MonoBehaviour
 
     }
 
+    IEnumerator storeround(){
+         WWWForm form = new WWWForm();
+            
+            
+                form.AddField("paymentwin", ButtonDict.paymentWin);
+                form.AddField("paymentlost", ButtonDict.paymentLost);
+                 form.AddField("playerid", PlayerPrefs.GetInt("id"));
+            
+       
+        
+        
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/storewinloss.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log("update points");        
+                
+           }
+        }
+    }
     public Color chckcolor(int num){
         if(ButtonDict.red.Contains(num)){
                    return Color.red;

@@ -63,7 +63,11 @@ namespace Commands
 
         public void Click()
         {
+             if(ButtonDict.betok){
+                return;
+                }
             if (!_statusButton._isActive){
+               
                  GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
 
         // Loop through each object and look for a Button component
@@ -85,6 +89,7 @@ namespace Commands
         }
                 return;
             }
+            
                
 
                
@@ -117,6 +122,9 @@ namespace Commands
         }
         public void Click1()
         {
+             if(ButtonDict.betok){
+                return;
+                }
             if (!_statusButton._isActive){
                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
 

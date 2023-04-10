@@ -41,12 +41,10 @@ namespace Infrastructure
             _payment = paymentWin;
             _payment = _payment + paymentChipsReturn;
                ButtonDict.lastfive=1;
-            if(paymentWin!=0 || paymentLost!=0){
-                Debug.Log("aaya in if confition");  
-               ButtonDict.winloss=true;
+            
                ButtonDict.paymentWin=paymentWin;
                ButtonDict.paymentLost=paymentLost;
-            }
+            
             
             return Observable.Return(Unit.Default)
                 .Do(_ => Debug.Log($"Win: {paymentWin}, Lost: {paymentLost}, Chips: {paymentChipsReturn}"))

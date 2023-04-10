@@ -71,6 +71,7 @@ void Start()
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+           StartCoroutine(rulefetch());
            
             Debug.Log("aaya");
              ButtonDict.buttonenable=true;
@@ -98,7 +99,7 @@ void Start()
         }
 
         if(timerValue<=10){
-             ButtonDict.rulefetch=0;
+             
             ButtonDict.buttonenable=false;
             ButtonDict.winnernumber=1;
 
@@ -135,34 +136,6 @@ void Start()
           //  StartCoroutine(winloss(ButtonDict.paymentWin,ButtonDict.paymentLost));
          }
     }
-             IEnumerator winloss(int paymentwin,int paymentlost){
-           Debug.Log("aaya in Enum");  
-            WWWForm form = new WWWForm();
-            
-            
-                form.AddField("paymentwin", paymentwin);
-                form.AddField("paymentlost", paymentlost);
-                form.AddField("playerid",PlayerPrefs.GetInt("id"));
-       
-        
-        
-
-
-    using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/storewinloss.php", form))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.result != UnityWebRequest.Result.Success)
-            {
-                Debug.Log(www.error+"Time error");
-            }
-            else
-            {
-                Debug.Log("Time updated");        
-                
-           }
-        }
-        }
     IEnumerator enableit(){
         yield return new WaitForSeconds(1);
         enabled=true;
@@ -184,6 +157,35 @@ void Start()
         {
             timerValue -= Time.deltaTime;
             photonView.RPC("UpdateTimer", RpcTarget.All, timerValue);
+        }
+    }
+
+     IEnumerator rulefetch()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("id", PlayerPrefs.GetInt("id"));
+        
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/rulefetch.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Debug.Log(www.downloadHandler.text);
+                string s= www.downloadHandler.text.Trim();
+                if(s=="Error"){
+                   Debug.Log("error");
+                }
+                else{
+                   ButtonDict.rule=int.Parse(s);
+                }
+            }
         }
     }
 
