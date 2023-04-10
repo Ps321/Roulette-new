@@ -18,7 +18,8 @@ namespace Components
         public Animator mainCameraAnimator;
         public Animator rouletteAnimator;
         public GameObject gg;
-
+        public GameObject actualtable;
+                public GameObject notactualtable;
         public Text winnerText;
 
         void Start()
@@ -35,11 +36,15 @@ namespace Components
             if(isRound==true){
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(true);
+               actualtable.SetActive(false);
+               notactualtable.SetActive(true);
             }
             else{
                 winnerText.text= ButtonDict.winnerval.ToString();
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(false);
+                              actualtable.SetActive(true);
+               notactualtable.SetActive(false);
             }
             
            // mainCameraAnimator.SetBool("Play", isRound);
