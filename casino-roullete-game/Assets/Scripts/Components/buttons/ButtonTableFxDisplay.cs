@@ -27,8 +27,9 @@ namespace Components
         }
 
         private void Update() {
-            if(ButtonDict.first==1){
+            if(ButtonDict.first==1 || ButtonDict.winnernumber==1){
                  animatorButton.SetBool("win",false);
+                 ButtonDict.winnernumber=0;
             }
         }
         private void OnWin(int num)

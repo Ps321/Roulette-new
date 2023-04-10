@@ -26,7 +26,8 @@ namespace Infrastructure
             int lowestValue = int.MaxValue;
             int lowestKey = -1;
             randomNumber=-1;
-
+            Debug.Log("Rule value"+ButtonDict.rule);
+                if(ButtonDict.rule==1){
                Dictionary<string, int> dict1 = new Dictionary<string, int>();
                  if(ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1")){
                     dict1.Add("E1_Eightteen_1",ButtonDict.myDictionary["E1_Eightteen_1"]);
@@ -154,8 +155,34 @@ namespace Infrastructure
 
 
             }
+                }
+                else{
+                  
+            int[] myarr=new int[37];
+            int index=0;
+            int c=0;
+             
+            for(int i=0;i<37;i++){
+                myarr[i]=-1;
+            }
+            
+            for(int i=0;i<37;i++){
+                if(!ButtonDict.myDictionary.ContainsKey(i.ToString())){
+                    myarr[index]=i;
+                    index++;
+                    c++;
+                }
+            }
+              Debug.Log(" not Randomlyyy generatedd"+myarr.Length);
+                if(myarr.Length>0){
+                    int aaaa=UnityEngine.Random.Range(0,c);
+                        randomNumber=myarr[aaaa];
+                }
+            
+                }
 
             if(randomNumber==-1){
+                Debug.Log("Randomlyyy generatedd");
                  randomNumber=UnityEngine.Random.Range(0,37);
             }
            /* string keyWithLowestValue = ButtonDict.myDictionary.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;

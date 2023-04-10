@@ -54,11 +54,17 @@ namespace Components
            // _sphere.transform.rotation=Quaternion.identity;
             _sphere.SetActive(true);
             _sphere.transform.SetParent(sphereContainer.transform);
-
+            sphereContainer.GetComponent<Animator>().SetBool("rotate",true);
+             StartCoroutine(changevalue());
             Debug.Log($"Roullete positioning ball in number {num}!");
             StartCoroutine(lastfivenumber(num));
         }
 
+            IEnumerator changevalue(){
+                yield return new WaitForSeconds(1.5f);
+                sphereContainer.GetComponent<Animator>().SetBool("rotate",false);
+
+            }
         IEnumerator lastfivenumber(int value){
            
             WWWForm form = new WWWForm();

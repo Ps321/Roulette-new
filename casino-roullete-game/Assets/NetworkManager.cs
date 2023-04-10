@@ -34,5 +34,9 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         if(ButtonDict.loadedfirst==1){
             loading.SetActive(false);
         }
+
+        
     }
+
+    
 }

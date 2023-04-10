@@ -11,10 +11,11 @@ public class Login : MonoBehaviour
 
     [SerializeField] private InputField username;
     [SerializeField] private InputField password;
+    public GameObject g;
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(servercheck());
     }
 
     // Update is called once per frame
@@ -52,6 +53,39 @@ public class Login : MonoBehaviour
                     Debug.Log(s); //Output 1
                     PlayerPrefs.SetInt("id",int.Parse(s.ToString()));
                     SceneManager.LoadScene(2);
+                }
+            }
+        }
+    }
+    IEnumerator servercheck()
+    {
+        WWWForm form = new WWWForm();
+        
+
+        using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/servercheck.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                //Debug.Log(www.downloadHandler.text);
+                string s= www.downloadHandler.text.Trim();
+                if(s=="Error"){
+                    
+                }
+                else{
+                    Debug.Log(s);
+                   if(s=="0"){
+                    g.SetActive(true);
+
+                   }
+                   else{
+                    g.SetActive(false);
+                   }
                 }
             }
         }

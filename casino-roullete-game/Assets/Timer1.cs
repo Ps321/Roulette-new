@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using Photon.Pun;
 using Components;
 using Commands;
@@ -70,6 +71,7 @@ void Start()
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+           
             Debug.Log("aaya");
              ButtonDict.buttonenable=true;
             ButtonDict.betok=false;
@@ -96,7 +98,21 @@ void Start()
         }
 
         if(timerValue<=10){
+             ButtonDict.rulefetch=0;
             ButtonDict.buttonenable=false;
+            ButtonDict.winnernumber=1;
+
+            GameObject[] buttons = GameObject.FindGameObjectsWithTag("Button");
+        
+        foreach (GameObject button in buttons)
+        {
+            Animator animator = button.GetComponent<Animator>();
+            
+            if (animator != null)
+            {
+                animator.SetBool("win", false);
+            }
+        }
             Timer.SetBool("glow",false);
             foreach (KeyValuePair<string, int> pair in ButtonDict.myDictionary)
             {
@@ -113,7 +129,40 @@ void Start()
         }
         messages();
          }
+
+
+         if(ButtonDict.winloss==true){
+          //  StartCoroutine(winloss(ButtonDict.paymentWin,ButtonDict.paymentLost));
+         }
     }
+             IEnumerator winloss(int paymentwin,int paymentlost){
+           Debug.Log("aaya in Enum");  
+            WWWForm form = new WWWForm();
+            
+            
+                form.AddField("paymentwin", paymentwin);
+                form.AddField("paymentlost", paymentlost);
+                form.AddField("playerid",PlayerPrefs.GetInt("id"));
+       
+        
+        
+
+
+    using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/storewinloss.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error+"Time error");
+            }
+            else
+            {
+                Debug.Log("Time updated");        
+                
+           }
+        }
+        }
     IEnumerator enableit(){
         yield return new WaitForSeconds(1);
         enabled=true;

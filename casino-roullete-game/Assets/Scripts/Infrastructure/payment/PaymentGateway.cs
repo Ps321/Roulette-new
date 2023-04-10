@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using ViewModel;
 using UniRx;
 using Components;
@@ -40,13 +41,23 @@ namespace Infrastructure
             _payment = paymentWin;
             _payment = _payment + paymentChipsReturn;
                ButtonDict.lastfive=1;
+            if(paymentWin!=0 || paymentLost!=0){
+                Debug.Log("aaya in if confition");  
+               ButtonDict.winloss=true;
+               ButtonDict.paymentWin=paymentWin;
+               ButtonDict.paymentLost=paymentLost;
+            }
+            
             return Observable.Return(Unit.Default)
                 .Do(_ => Debug.Log($"Win: {paymentWin}, Lost: {paymentLost}, Chips: {paymentChipsReturn}"))
                 .Do(_ => Debug.Log($"The roullete pay: {_payment}"));
+
+            
              
         }
-    }
 
+    }
+    
     public static class PaymentHandler
     {
         // Calculate and return the all values of payment.

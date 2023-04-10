@@ -11,11 +11,18 @@ namespace Commands
     public class ButtonDict : MonoBehaviour
     {
         public CharacterTable characterTable;
+        public static bool winloss=false;
+        public static int paymentWin;
+        public static int paymentLost;
 
         public static int first=0;
         public static int loadedfirst=0;
         public static int lastfive=0;
         public static int first_1=0;
+
+        public static int rulefetch=0;
+        public static int rule=0;
+        public static int winnernumber=0;
         public static bool cancelbet=false;
 
         public static int winnerval=0;
