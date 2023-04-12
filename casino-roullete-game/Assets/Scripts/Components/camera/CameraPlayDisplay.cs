@@ -18,6 +18,8 @@ namespace Components
         public Animator mainCameraAnimator;
         public Animator rouletteAnimator;
         public GameObject gg;
+
+        public AudioSource audio;
         public GameObject actualtable;
                 public GameObject notactualtable;
         public Text winnerText;
@@ -37,6 +39,7 @@ namespace Components
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(true);
                actualtable.SetActive(false);
+               audio.Stop();
                notactualtable.SetActive(true);
             }
             else{
@@ -44,6 +47,7 @@ namespace Components
                 rouletteAnimator.SetBool("spin", isRound);
                 gg.SetActive(false);
                               actualtable.SetActive(true);
+                              audio.Play();
                notactualtable.SetActive(false);
             }
             

@@ -12,6 +12,8 @@ public class Login : MonoBehaviour
     [SerializeField] private InputField username;
     [SerializeField] private InputField password;
     public GameObject g;
+
+    public Text t;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +49,8 @@ public class Login : MonoBehaviour
                 //Debug.Log(www.downloadHandler.text);
                 string s= www.downloadHandler.text.Trim();
                 if(s=="Error"){
-                    
+                    t.text="Invalid Credentials";
+                    t.color=Color.red;
                 }
                 else{
                     Debug.Log(s); //Output 1

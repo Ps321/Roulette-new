@@ -10,6 +10,8 @@ public class Buttons1 : MonoBehaviour
     public Sprite[] highlightedSprite;
     public Button[] bb;
     private Button currentHighlightedButton;
+
+    public AudioSource audio;
     public int c=0;
 public Button B;
 
@@ -24,6 +26,7 @@ void Start()
 
     public void OnClick(int num)
     {
+        audio.Play();
         CompareGameObjects();
         if (ButtonDict.highlightedButton == null)
         {

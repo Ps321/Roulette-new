@@ -40,7 +40,7 @@ namespace Components
             characterTable.OnDestroyChip
                 .OnNext(this);
             
-            PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[4]);
+           // PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[4]);
         }
        
     }

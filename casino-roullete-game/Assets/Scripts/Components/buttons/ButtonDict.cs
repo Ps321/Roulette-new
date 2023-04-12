@@ -21,6 +21,7 @@ namespace Commands
         public static int first_1=0;
 
         public static int rulefetch=0;
+        public static AudioSource audio;
         public static int rule=0;
         public static int winnernumber=0;
         public static bool cancelbet=false;

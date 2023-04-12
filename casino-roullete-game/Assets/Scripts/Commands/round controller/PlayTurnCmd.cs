@@ -47,8 +47,9 @@ namespace Commands
             characterTable.OnRound.OnNext(true); // Initialize round
             characterTable.currentTableActive.Value = false; // Desactivete table buttons
             gameRoullete.OnRotate.OnNext(true);
-
+            
             yield return new WaitForSeconds(0.2f);
+            ButtonDict.audio.Play();
             gameRoullete.currentSpeed = 75f;
             yield return new WaitForSeconds(0.8f);
             gameRoullete.currentSpeed = 145f;
@@ -69,6 +70,7 @@ namespace Commands
             gameRoullete.currentSpeed = 75f;
    
             yield return new WaitForSeconds(0.5f);
+            ButtonDict.audio.Stop();
             // Finish round
             gameRoullete.currentSpeed = gameRoullete.defaultSpeed;
             characterTable.OnRound.OnNext(false); 

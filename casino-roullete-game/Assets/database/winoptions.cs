@@ -8,10 +8,11 @@ public class winoptions : MonoBehaviour
 {
     // Start is called before the first frame update
     
-
+public AudioSource a;
     // Update is called once per frame
     void Start()
     {
+        ButtonDict.audio=a;
         if(ButtonDict.rulefetch==0){
             ButtonDict.rulefetch=1;
             StartCoroutine(rulefetch());
