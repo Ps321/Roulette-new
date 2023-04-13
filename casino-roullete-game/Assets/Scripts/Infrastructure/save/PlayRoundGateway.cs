@@ -139,6 +139,8 @@ namespace Infrastructure
             randomNumber=(UnityEngine.Random.Range(0,19)*2)+1;
           
            }
+
+
             
 
             if(randomNumber==-1){
@@ -158,24 +160,188 @@ namespace Infrastructure
                 }
                 else{
                   
-            int[] myarr=new int[37];
+            int[] myarr=new int[38];
             int index=0;
             int c=0;
              
-            for(int i=0;i<37;i++){
+            for(int i=0;i<=37;i++){
                 myarr[i]=-1;
             }
             
-            for(int i=0;i<37;i++){
+            for(int i=0;i<=37;i++){
                 if(!ButtonDict.myDictionary.ContainsKey(i.ToString())){
                     myarr[index]=i;
                     index++;
                     c++;
                 }
             }
+
+            List<int> list=new List<int>(myarr);
+
+
+
+
+            if(ButtonDict.myDictionary.ContainsKey("12_1")){
+               
+           for(int i=1;i<=12;i++){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+            if(ButtonDict.myDictionary.ContainsKey("12_2")){
+               
+           for(int i=13;i<=24;i++){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+            if(ButtonDict.myDictionary.ContainsKey("12_3")){
+               
+           for(int i=25;i<=36;i++){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+           if(ButtonDict.myDictionary.ContainsKey("c1")){
+               
+           for(int i=0;i<12;i++){
+            if(Array.IndexOf(myarr,ButtonDict.c1[i])!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,ButtonDict.c1[i]));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+             if(ButtonDict.myDictionary.ContainsKey("c2")){
+               
+           for(int i=0;i<12;i++){
+            if(Array.IndexOf(myarr,ButtonDict.c2[i])!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,ButtonDict.c2[i]));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+           if(ButtonDict.myDictionary.ContainsKey("c3")){
+               
+           for(int i=0;i<12;i++){
+            if(Array.IndexOf(myarr,ButtonDict.c3[i])!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,ButtonDict.c3[i]));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+           if(ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1")){
+               
+           for(int i=1;i<=18;i++){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+           if(ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2")){
+               
+           for(int i=19;i<=36;i++){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+
+
+           if(ButtonDict.myDictionary.ContainsKey("E2_Black")){
+               
+           for(int i=0;i<18;i++){
+            if(Array.IndexOf(myarr,ButtonDict.black[i])!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,ButtonDict.black[i]));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+           if(ButtonDict.myDictionary.ContainsKey("E2_Red")){
+               
+           for(int i=0;i<18;i++){
+            if(Array.IndexOf(myarr,ButtonDict.red[i])!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,ButtonDict.red[i]));
+                myarr=list.ToArray();
+                i=i-1;
+            }
+           }
+          
+           }
+
+
+           if(ButtonDict.myDictionary.ContainsKey("E_Even")){
+               
+           for(int i=2;i<=36;i=i+2){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-2;
+            }
+           }
+          
+           }
+
+           if(ButtonDict.myDictionary.ContainsKey("E_Odd")){
+               
+           for(int i=1;i<=37;i=i+2){
+            if(Array.IndexOf(myarr,i)!=-1){
+                list.RemoveAt(Array.IndexOf(myarr,i));
+                myarr=list.ToArray();
+                i=i-2;
+            }
+           }
+          
+           }
+
+
+
+
+           Debug.Log("Array: " + string.Join(", ", myarr));
+        Debug.Log("List: " + string.Join(", ", list));
+           
+            myarr=list.ToArray();
+            int count=0;
+            for(int i=0;i<myarr.Length;i++){
+                if(myarr[i]!=-1){
+                    count++;
+                }
+            }
+          
               Debug.Log(" not Randomlyyy generatedd"+myarr.Length);
                 if(myarr.Length>0){
-                    int aaaa=UnityEngine.Random.Range(0,c);
+                     Debug.Log("inside aaya");
+                    int aaaa=UnityEngine.Random.Range(0,count);
                         randomNumber=myarr[aaaa];
                 }
             
