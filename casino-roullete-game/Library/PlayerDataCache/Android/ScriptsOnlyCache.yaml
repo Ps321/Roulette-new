@@ -96,6 +96,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -140,6 +141,8 @@ ScriptsOnlyBuild:
     - Class: 20
       Script: {instanceID: 0}
     - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
       Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
@@ -207,6 +210,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3438}
     - Class: 114
       Script: {instanceID: 3570}
+    - Class: 114
+      Script: {instanceID: 3654}
     - Class: 114
       Script: {instanceID: 3712}
     - Class: 114
@@ -315,6 +320,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
+    - Class: 210
+      Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
@@ -342,7 +349,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -1801,7 +1814,7 @@ ScriptsOnlyBuild:
     className: AnalyticsTracker
   - hash:
       serializedVersion: 2
-      Hash: 6a1caac6cfc2febb0761f59439ff6e74
+      Hash: 8feba44641bdcbb02bcfe3c29ae56cb1
     assemblyName: Scripts.dll
     namespaceName: Commands
     className: ButtonHighlightSelectionLongPress

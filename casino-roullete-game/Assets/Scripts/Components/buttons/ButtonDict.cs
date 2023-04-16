@@ -67,7 +67,15 @@ namespace Commands
         }
 
         IEnumerator takething(){
-            if(characterTable.characterMoney.currentWinnerValue.Value>=1000){
+            if(characterTable.characterMoney.currentWinnerValue.Value>=5000){
+                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-55){
+                yield return new WaitForSeconds(0.05f);
+                characterTable.characterMoney.AddCash1(55);
+                characterTable.characterMoney.currentWinnerValue.Value-=55;
+            }
+            }
+
+            else if(characterTable.characterMoney.currentWinnerValue.Value>=1000){
                  for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-25){
                 yield return new WaitForSeconds(0.05f);
                 characterTable.characterMoney.AddCash1(25);
