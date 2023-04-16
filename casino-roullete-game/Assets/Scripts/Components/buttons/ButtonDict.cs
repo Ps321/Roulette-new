@@ -23,6 +23,7 @@ namespace Commands
         public static int rulefetch=0;
         public static AudioSource audio;
         public static int rule=0;
+        public static int currentchipvalue=10;
         public static int winnernumber=0;
         public static bool cancelbet=false;
 
@@ -42,6 +43,7 @@ namespace Commands
        public static int[] black=new int[] { 2,4,6,8,10,11,13,15,17,20,24,22,26,28,29,31,33,35};   
         public static bool betok=false;
         public static Dictionary<string,int> myDictionary;
+        
         // Start is called before the first frame update
         void Start()
         {
@@ -56,10 +58,37 @@ namespace Commands
             }
         }
 
+     
         public void Take(){
-           characterTable.characterMoney.AddCash1(characterTable.characterMoney.currentWinnerValue.Value);
-            StartCoroutine(insertpoints());
+         
+          Debug.Log(characterTable.characterMoney.currentWinnerValue.Value);
+          StartCoroutine(takething());
+           
         }
+
+        IEnumerator takething(){
+            if(characterTable.characterMoney.currentWinnerValue.Value>=1000){
+                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-25){
+                yield return new WaitForSeconds(0.05f);
+                characterTable.characterMoney.AddCash1(25);
+                characterTable.characterMoney.currentWinnerValue.Value-=25;
+            }
+            }
+            else{
+                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-7){
+                yield return new WaitForSeconds(0.05f);
+                characterTable.characterMoney.AddCash1(7);
+                characterTable.characterMoney.currentWinnerValue.Value-=7;
+            }
+            }
+
+           
+            characterTable.characterMoney.currentWinnerValue.Value=0;
+            ButtonDict.winnerval=0;
+            ButtonDict.updatekro=true;
+             StartCoroutine(insertpoints());
+        }
+
 
         public static void Destroykro(GameObject obj){
             Destroy(obj);

@@ -61,13 +61,17 @@ namespace Commands
             gameRoullete.currentSpeed = 265f;
             yield return new WaitForSeconds(0.8f);
             gameRoullete.currentSpeed = 240f;
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.8f);
+             gameRoullete.currentSpeed = 220f;
+            yield return new WaitForSeconds(1.2f);
             // Ball position
-            gameRoullete.currentSpeed = 145f;
+            gameRoullete.currentSpeed = 220f; 
             gameRoullete.OnNumber.OnNext(num);
+                yield return new WaitForSeconds(0.8f);
+              gameRoullete.currentSpeed = 75f; 
 
-            yield return new WaitForSeconds(4f);
-            gameRoullete.currentSpeed = 75f;
+            yield return new WaitForSeconds(1.2f);
+            gameRoullete.currentSpeed = 30f;
    
             yield return new WaitForSeconds(0.5f);
             ButtonDict.audio.Stop();

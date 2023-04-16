@@ -195,14 +195,16 @@ namespace Commands
 
         private void Update()
         {
-            //      _longPress.LongPressCheck(characterTable, buttonData);
+                _longPress.LongPressCheck(characterTable, buttonData,this.gameObject);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             _longPress.LongPress(characterTable, buttonData, false);
             _longPress.ResetPointer();
+             if(characterTable.characterMoney.characterMoney.Value>=ButtonDict.currentchipvalue){
             Click();
+             }
         }
     }
 }

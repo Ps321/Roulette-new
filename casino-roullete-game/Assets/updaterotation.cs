@@ -13,6 +13,6 @@ public class updaterotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.rotation=Quaternion.Euler(0,0,0);
+       transform.rotation=Quaternion.identity;
     }
 }

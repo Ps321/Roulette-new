@@ -16,6 +16,10 @@ namespace Components
         public CharacterTable characterTable;
         public Text moneyLabel;
         public Text betLabel;
+        float timer=0.0f;
+        float timeBetweenFunctionCalls=60.0f;
+        bool update=true;
+
 
 
         public void Start()
@@ -28,11 +32,21 @@ namespace Components
                 .Subscribe(OnChangeMoney)
                 .AddTo(this);
         }
+        private void Update() {
+             timer += Time.fixedDeltaTime;
+            if(timer >= timeBetweenFunctionCalls ){
+                timer=0.0f;
+                 StartCoroutine(insertpoints(1));
+
+            }
+        }
 
         private void OnChangeBet(int value)
         {
             betLabel.text = value.ToString();
-            StartCoroutine(insertpoints(value));
+            
+            
+           
         }
 
         private void OnChangeMoney(int value)

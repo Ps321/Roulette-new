@@ -49,11 +49,12 @@ namespace Components
             IEnumerable<GameObject> anchor = _anchorNumbers.Where(anc => anc.name == $"handler_{num}");
             _ballPosition = anchor.ToArray()[0].gameObject.transform.position;
             
-            _sphere = Instantiate(gameRoullete.sphere,_ballPosition,Quaternion.Euler(0,0,0));
+            _sphere = Instantiate(gameRoullete.sphere,_ballPosition,Quaternion.identity);
             _sphere.transform.position = _ballPosition;
-           // _sphere.transform.rotation=Quaternion.identity;
+            _sphere.transform.rotation=Quaternion.identity;
             _sphere.SetActive(true);
             _sphere.transform.SetParent(sphereContainer.transform);
+            Debug.Log("Rotatopm"+_sphere.transform.rotation);
             sphereContainer.GetComponent<Animator>().SetBool("rotate",true);
              StartCoroutine(changevalue());
             Debug.Log($"Roullete positioning ball in number {num}!");

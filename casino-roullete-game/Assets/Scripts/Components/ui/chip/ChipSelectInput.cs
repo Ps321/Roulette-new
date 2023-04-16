@@ -39,6 +39,7 @@ namespace Components
         public void changevalue(GameObject g){
             
             ChipSelected chipSelected = g.GetComponent<ChipSelected>();
+            ButtonDict.currentchipvalue=chipSelected.chipData.chipValue;
             currentchipvalue=chipSelected.chipData.chipValue;
             gameCmdFactory.ChipSelect(characterTable, chipSelected.chipData).Execute();
             

@@ -26,6 +26,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
     public bool enabletimer=false;
     bool betokclicked=false;
      public ButtonDict dd;
+     private bool updatemoney=true;
 
     public GameObject a;
 
@@ -57,10 +58,16 @@ void Start()
     void Update()
     {
 
+
+
+
         if(enabled==true){
            DateTime now = DateTime.Now;
         int seconds = now.Second;
         timerValue = 60 - seconds;
+        
+        
+        
         if(timerValue==60)
         {
             timerValue=0;
@@ -72,6 +79,7 @@ void Start()
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
            StartCoroutine(rulefetch());
+           updatemoney=true;
            
             Debug.Log("aaya");
              ButtonDict.buttonenable=true;
@@ -99,6 +107,8 @@ void Start()
         }
 
         if(timerValue<=10){
+
+            updatemoney=true;
              
             ButtonDict.buttonenable=false;
             ButtonDict.winnernumber=1;
@@ -135,7 +145,26 @@ void Start()
          if(ButtonDict.winloss==true){
           //  StartCoroutine(winloss(ButtonDict.paymentWin,ButtonDict.paymentLost));
          }
+
+
+            /*Update money*/
+
+           
+
+
     }
+
+
+
+    
+
+
+
+
+
+
+
+
     IEnumerator enableit(){
         yield return new WaitForSeconds(1);
         enabled=true;

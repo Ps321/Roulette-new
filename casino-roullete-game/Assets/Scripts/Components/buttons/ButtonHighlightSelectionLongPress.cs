@@ -11,8 +11,11 @@ namespace Commands
         public Button button;
 
         private bool isPointerDown = false ;
+        private CharacterTable cc;
+      
         private bool isLongPressed = false ;
         private float elapsedTime = 0f;
+        private GameObject gg;
         
         public void SetPointerDown(bool value)
         {
@@ -24,13 +27,15 @@ namespace Commands
             isLongPressed = false;
             elapsedTime = 0f ;
         }
-        public void LongPressCheck(CharacterTable characterTable, ButtonTable buttonData)
+        public void LongPressCheck(CharacterTable characterTable, ButtonTable buttonData,GameObject btn)
         {
             if (isPointerDown && !isLongPressed)
             {
                 elapsedTime += Time.deltaTime;
                 if (elapsedTime >= holdDuration)
                 {
+                    gg=btn;
+                    cc=characterTable;
                     isLongPressed = true;
                     elapsedTime = 0f;
                     if (button.interactable)
@@ -40,8 +45,27 @@ namespace Commands
                 }
             }
         }
+    public float timeBetweenFunctionCalls = 0.05f;
+        private float timer = 0.0f;
+  
+  
+     private void FixedUpdate() {
+            timer += Time.fixedDeltaTime;
+            if(isLongPressed && timer >= timeBetweenFunctionCalls){
+                timer=0.0f;
+                if(cc.characterMoney.characterMoney.Value>=ButtonDict.currentchipvalue){
+                    gg.GetComponent<ButtonTableInput>().Click();
+                }
+                else{
+                    Debug.Log("nhi hoga tujhse");
+                }
+                
+            }
+        }
         public void LongPress(CharacterTable characterTable, ButtonTable buttonData, bool currentStatus)
         {
+
+
             LongPress longPress = new LongPress()
             {
                 isPressed = currentStatus,

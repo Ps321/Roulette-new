@@ -1,6 +1,7 @@
 using UnityEngine;
 using Components;
 using ViewModel;
+using TMPro;
 
 namespace Commands
 {
@@ -12,6 +13,8 @@ namespace Commands
         public Sprite[] gg;
         public GameObject c;
         ChipSelectInput c1;
+        private float previousz=-999;
+        private float zoffset=-0.1f;
 
         private void Start() {
             c1=c.GetComponent<ChipSelectInput>();
@@ -19,32 +22,68 @@ namespace Commands
 
         public void InstantiateChip(CharacterTable characterTable, ButtonTable buttonData)
         {
+
+            GameObject[] gg1=GameObject.FindGameObjectsWithTag("Chip");
+
+            foreach(GameObject previouschip in gg1){
+                if(previouschip.GetComponent<ChipGame>().chipname==buttonData.name){
+                    previouschip.GetComponent<SpriteRenderer>().enabled=false;
+                   previouschip.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled=false;
+                  //  Destroy(previouschip);
+                }
+            }
+
             GameObject chipInstance = Instantiate(characterTable.chipPrefab);
             chipInstance.GetComponent<ChipGame>().chipname=buttonData.name;
+            if(previousz==-999){
+                previousz=chipInstance.transform.position.z;
+              
+            }
+            else{
+                chipInstance.transform.position=new Vector3(chipInstance.transform.position.x,chipInstance.transform.position.y,chipInstance.transform.position.z+zoffset);
+                zoffset=zoffset-1.0f;
+               
+
+            }
             buttonData.currentOffset.y=0;
+            
            if(c1.currentchipvalue==10){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[2];
-        }
+            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+          }
         else if(c1.currentchipvalue==1){
             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+c1.currentchipvalue).ToString();
         }
         else if(c1.currentchipvalue==5){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[1];
+            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         else if(c1.currentchipvalue==50){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[3];
+           chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         else if(c1.currentchipvalue==100){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[4];
+            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         else if(c1.currentchipvalue==500){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[5];
+             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         else if(c1.currentchipvalue==1000){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[6];
+             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         else if(c1.currentchipvalue==5000){
-            chipInstance.GetComponent<SpriteRenderer>().sprite=gg[7];
+             chipInstance.GetComponent<SpriteRenderer>().sprite=gg[0];
+             chipInstance.transform.GetChild(0).gameObject.GetComponent<TextMeshPro>().text=(buttonData.currentChipsOnTop+1).ToString();
+         
         }
         
             chipInstance.SetActive(false);

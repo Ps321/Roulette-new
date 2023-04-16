@@ -32,7 +32,7 @@ namespace ViewModel
             
             characterMoney.Value += cashWinner;
             ButtonDict.winnerval=0;
-             currentWinnerValue.Value=0;
+            // currentWinnerValue.Value-=cashWinner;
             ButtonDict.updatekro=true;
            
         }

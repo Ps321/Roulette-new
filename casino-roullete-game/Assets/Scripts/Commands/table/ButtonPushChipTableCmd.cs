@@ -39,7 +39,7 @@ namespace Commands
                 PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[3]);
 
                 bool _hasFichasOnTop = buttonData.currentChipsOnTop > 0;
-                tableController.tableInteracatable.PushChipInButton(tableController.table.characterTable, buttonData, chipGame, chipData, chipInstance, buttonData.currentSpritePivot, buttonData.GetOffset(), _hasFichasOnTop);
+                tableController.tableInteracatable.PushChipInButton(tableController.table.characterTable, buttonData, chipGame, chipData, chipInstance, buttonData.currentSpritePivot, new Vector2(0,0), _hasFichasOnTop);
                 
                 buttonData.currentChipsOnTop++;
             }
