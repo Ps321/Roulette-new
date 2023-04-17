@@ -50,5 +50,35 @@ namespace Commands
             }
         }    
 
+
+
+        public void Execute1()
+        {
+            ChipGame chipGame = chipInstance.GetComponent<ChipGame>();
+
+            // Detect if is all in one
+            if(chipData.chipkey == KeyFicha.ChipAll)
+            {
+                chipData.chipValue = buttonData.currentChipsOnTop+1;
+            }
+            
+            // Find if is possible bet < totalWinner
+            if(tableController.table.characterTable.characterMoney.CheckBetValue(buttonData.currentChipsOnTop+1))
+            {
+                PlayerSound.Instance.gameSound.OnSound.OnNext(PlayerSound.Instance.gameSound.audioReferences[3]);
+
+                bool _hasFichasOnTop = buttonData.currentChipsOnTop > 0;
+                tableController.tableInteracatable.PushChipInButton(tableController.table.characterTable, buttonData, chipGame, chipData, chipInstance, buttonData.currentSpritePivot, new Vector2(0,0), _hasFichasOnTop);
+                
+                buttonData.currentChipsOnTop++;
+            }
+            else
+            {
+                chipGame.DestroyChip();
+                Debug.Log("Bet is not possible because the value of ficha is very high");
+            }
+        }    
+
+
     }
 }

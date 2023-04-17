@@ -64,6 +64,9 @@ namespace Commands
 
         public void Click()
         {
+            if(!ButtonDict.buttonenable){
+                return;
+            }
             if (ButtonDict.betok)
             {
                 return;
@@ -182,6 +185,78 @@ namespace Commands
             }
             _interactableButton.InstantiateChip1(characterTable, buttonData);
         }
+
+
+        public void Click2( int value)
+        {
+            if(!ButtonDict.buttonenable){
+                return;
+            }
+            if (ButtonDict.betok)
+            {
+                return;
+            }
+            if (!_statusButton._isActive)
+            {
+
+                GameObject[] objectsWithTag = GameObject.FindGameObjectsWithTag("Chip");
+
+                // Loop through each object and look for a Button component
+                foreach (GameObject obj in objectsWithTag)
+                {
+                    string name = obj.GetComponent<ChipGame>().chipname;
+                    Debug.Log(buttonData.buttonName);
+                    //  name=name.Replace("Number_","");
+
+
+                    if (buttonData.buttonName == name)
+                    {
+                        ButtonDict.myDictionary.Remove(buttonData.buttonName);
+                        characterTable.characterMoney.AddCash2(buttonData.currentChipsOnTop);
+                        // Enable the button
+                        Destroy(obj);
+                    }
+
+                }
+                return;
+            }
+
+
+
+
+            audio.Play();
+
+            animation.SetBool("clicked", true);
+            table.SetBool("clicked", true);
+            roulette.SetActive(false);
+
+            if (ButtonDict.first == 0)
+            {
+                characterTable.currentTableActive.Value = false;
+                StartCoroutine(disabletable());
+                buttonData.currentOffset.y = 0f;
+                ButtonDict.first = 1;
+                return;
+
+            }
+            buttonData.currentChipsOnTop=value-c.currentchipvalue;
+
+            buttonData.currentChipsOnTop = buttonData.currentChipsOnTop + c.currentchipvalue - 1;
+            if (ButtonDict.myDictionary.ContainsKey(buttonData.buttonName))
+            {
+
+                ButtonDict.myDictionary[buttonData.buttonName] = buttonData.currentChipsOnTop + 1;
+            }
+            else
+            {
+                ButtonDict.myDictionary.Add(buttonData.buttonName, buttonData.currentChipsOnTop + 1);
+            }
+
+
+            _interactableButton.InstantiateChip2(characterTable, buttonData);
+
+        }
+
 
         IEnumerator disabletable()
         {

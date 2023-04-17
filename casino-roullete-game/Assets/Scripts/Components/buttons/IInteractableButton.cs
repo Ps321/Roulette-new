@@ -6,5 +6,6 @@ namespace Commands
     {
         void InstantiateChip(CharacterTable characterTable, ButtonTable buttonData);
         void InstantiateChip1(CharacterTable characterTable, ButtonTable buttonData);
+        void InstantiateChip2(CharacterTable characterTable, ButtonTable buttonData);
     }
 }

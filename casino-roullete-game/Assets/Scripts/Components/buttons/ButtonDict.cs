@@ -43,11 +43,14 @@ namespace Commands
        public static int[] black=new int[] { 2,4,6,8,10,11,13,15,17,20,24,22,26,28,29,31,33,35};   
         public static bool betok=false;
         public static Dictionary<string,int> myDictionary;
+
+        public static Dictionary<string,int> previousbet;
         
         // Start is called before the first frame update
         void Start()
         {
          myDictionary = new Dictionary<string, int>();
+          previousbet = new Dictionary<string, int>();
         }
 
         private void Update() {

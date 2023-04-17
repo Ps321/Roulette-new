@@ -80,8 +80,18 @@ void Start()
         if(timerValue <=0){
            StartCoroutine(rulefetch());
            updatemoney=true;
+            if(ButtonDict.myDictionary.Count!=0){
+             if(ButtonDict.previousbet.Count!=0){
+                ButtonDict.previousbet.Clear();
+             }
+                ButtonDict.previousbet=new Dictionary<string, int>(ButtonDict.myDictionary);;
+                 
+               
+            }else{
+                ButtonDict.previousbet.Clear();
+            }
            
-            Debug.Log("aaya");
+            
              ButtonDict.buttonenable=true;
             ButtonDict.betok=false;
             StartCoroutine(cleardict());
@@ -221,7 +231,9 @@ void Start()
 
         IEnumerator cleardict(){
             yield return  new WaitForSeconds(5);
+         
             ButtonDict.myDictionary.Clear();
+         
         }
     public void NoMoreBet(){
         ButtonDict.betok=true;

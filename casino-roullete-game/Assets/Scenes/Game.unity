@@ -4300,6 +4300,7 @@ GameObject:
   - component: {fileID: 195228502}
   - component: {fileID: 195228504}
   - component: {fileID: 195228503}
+  - component: {fileID: 195228505}
   m_Layer: 5
   m_Name: Winner_5
   m_TagString: Untagged
@@ -4324,7 +4325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -173, y: 115}
+  m_AnchoredPosition: {x: -135, y: 85}
   m_SizeDelta: {x: 169, y: 44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &195228503
@@ -4365,6 +4366,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195228501}
   m_CullTransparentMesh: 1
+--- !u!114 &195228505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195228501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 195228503}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2015730090}
+        m_TargetAssemblyTypeName: PreviousBet, Assembly-CSharp
+        m_MethodName: previous_bet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &196553420
 GameObject:
   m_ObjectHideFlags: 0
@@ -47421,6 +47478,7 @@ GameObject:
   - component: {fileID: 2015730087}
   - component: {fileID: 2015730088}
   - component: {fileID: 2015730089}
+  - component: {fileID: 2015730090}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -47624,6 +47682,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2015730090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015730082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4767c258f79d44092f230d1ecf52f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbers:
+  - {fileID: 4099534831852101258}
+  - {fileID: 6573781864158099642}
+  - {fileID: 6573781864023155747}
+  - {fileID: 6573781863605342877}
+  - {fileID: 6573781863916326726}
+  - {fileID: 6573781865250682819}
+  - {fileID: 6573781865263189117}
+  - {fileID: 6573781863611032574}
+  - {fileID: 6573781865489607407}
+  - {fileID: 6573781864846983664}
+  - {fileID: 6573781863835402342}
+  - {fileID: 6573781865173815911}
+  - {fileID: 6573781863514678970}
+  - {fileID: 6573781863510899569}
+  - {fileID: 6573781863674420736}
+  - {fileID: 6573781863664695783}
+  - {fileID: 6573781863929832661}
+  - {fileID: 6573781863682285051}
+  - {fileID: 6573781865118919760}
+  - {fileID: 6573781864547571833}
+  - {fileID: 6573781864311038482}
+  - {fileID: 6573781865535191208}
+  - {fileID: 6573781864468287032}
+  - {fileID: 6573781865397702139}
+  - {fileID: 6573781863502628705}
+  - {fileID: 6573781864135641906}
+  - {fileID: 6573781864439766046}
+  - {fileID: 6573781864253168686}
+  - {fileID: 6573781865196020677}
+  - {fileID: 6573781865311350312}
+  - {fileID: 6573781864781519433}
+  - {fileID: 6573781864290416290}
+  - {fileID: 6573781864182854485}
+  - {fileID: 6573781865526653493}
+  - {fileID: 6573781864653208742}
+  - {fileID: 6573781863490382083}
+  - {fileID: 6573781863539988836}
+  - {fileID: 6573781863887546083}
 --- !u!1 &2016197845
 GameObject:
   m_ObjectHideFlags: 0
