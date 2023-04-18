@@ -4422,6 +4422,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 195228501}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1843167699}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &196553420
 GameObject:
   m_ObjectHideFlags: 0
@@ -10271,6 +10295,7 @@ MonoBehaviour:
   actualtable: {fileID: 1371952663}
   notactualtable: {fileID: 1142405213}
   winnerText: {fileID: 6155301725097534503}
+  spin: 1
 --- !u!1 &520138290
 GameObject:
   m_ObjectHideFlags: 0
@@ -31636,7 +31661,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e4439000c6bc1ac4785e6e0cdd9eeec3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b2ffece3ab95abb45a9be91b99598578, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -47532,6 +47557,8 @@ MonoBehaviour:
   dd: {fileID: 2015730087}
   a: {fileID: 1882127196}
   messages1: {fileID: 730285953}
+  previousBet: {fileID: 195228501}
+  BetOk: {fileID: 1843167699}
 --- !u!114 &2015730085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47733,6 +47760,20 @@ MonoBehaviour:
   - {fileID: 6573781863490382083}
   - {fileID: 6573781863539988836}
   - {fileID: 6573781863887546083}
+  row_col:
+  - {fileID: 6573781865168579413}
+  - {fileID: 6573781865004200823}
+  - {fileID: 6573781864872387105}
+  - {fileID: 6573781864517270639}
+  - {fileID: 6573781864166151338}
+  - {fileID: 6573781864016258302}
+  lastrow:
+  - {fileID: 6573781863928351845}
+  - {fileID: 6573781864541366283}
+  - {fileID: 6573781863940556586}
+  - {fileID: 6573781864898505237}
+  - {fileID: 6573781865093919803}
+  - {fileID: 6573781865358993142}
 --- !u!1 &2016197845
 GameObject:
   m_ObjectHideFlags: 0
@@ -60705,7 +60746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744728684089}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349055778195
@@ -60720,7 +60761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744720763433}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349064803964
@@ -60735,7 +60776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744711995846}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349064813351
@@ -60780,7 +60821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744698116513}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349084569649
@@ -60825,7 +60866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744585696944}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349220095302
@@ -60855,7 +60896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744545408621}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349282405137
@@ -60870,7 +60911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744493923499}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349299981077
@@ -60915,7 +60956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744457170573}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349334779607
@@ -61095,7 +61136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744303317121}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349473810010
@@ -61140,7 +61181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744274134065}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349504338048
@@ -61170,7 +61211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744245309117}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349545055048
@@ -61200,7 +61241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745300937588}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349553834405
@@ -61230,7 +61271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745285169000}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349574328037
@@ -61260,7 +61301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745277303955}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349577689106
@@ -61350,7 +61391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745208225806}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349646874327
@@ -61365,7 +61406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745205436781}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349653035732
@@ -61425,7 +61466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745142774775}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349711339304
@@ -61455,7 +61496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745130587634}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349725846570
@@ -61470,7 +61511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745126599568}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349735068563
@@ -61485,7 +61526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745117504553}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349743673019
@@ -61530,7 +61571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745105295842}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349754985028
@@ -61605,7 +61646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745020855878}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349833120076
@@ -61620,7 +61661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745019440886}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349845783043
@@ -61635,7 +61676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962745006446009}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349868214895
@@ -61650,7 +61691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744982183381}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349882289091
@@ -61680,7 +61721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744945177712}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349907962398
@@ -61725,7 +61766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744926524149}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728349932029058
@@ -61905,7 +61946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743636369134}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350144492266
@@ -61920,7 +61961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743632110928}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350169667074
@@ -61965,7 +62006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743588897012}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350201392764
@@ -61980,7 +62021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743575280070}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350207272684
@@ -61995,7 +62036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743569068374}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350207992329
@@ -62085,7 +62126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743492034243}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350295398111
@@ -62130,7 +62171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743466960552}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350316729396
@@ -62160,7 +62201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743413402171}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350383661541
@@ -62220,7 +62261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743371341990}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350423087139
@@ -62265,7 +62306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743325816956}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350469416993
@@ -62355,7 +62396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743233945448}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350556625150
@@ -62415,7 +62456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743203722341}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350590902952
@@ -62445,7 +62486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743181114555}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350598890876
@@ -62580,7 +62621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744108478005}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350747221935
@@ -62700,7 +62741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962744021875352}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350839984518
@@ -62745,7 +62786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743994419946}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350860809696
@@ -62775,7 +62816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743964184316}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350891925713
@@ -62820,7 +62861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743947796964}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728350918457851
@@ -62940,7 +62981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743850596486}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728351028160264
@@ -62955,7 +62996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743824281778}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728351030337736
@@ -63045,7 +63086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743765521251}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728351103089451
@@ -63105,7 +63146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 4705962743699917018}
   timeBetweenFunctionCalls: 0.05
 --- !u!114 &2280728351156422986
@@ -83295,7 +83336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Wheel Zoom On
+  m_Text: Wheel Zoom Off
 --- !u!222 &6155301726521627228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -94128,7 +94169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac81685f93a20c4b9e5bf81ea2591ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0.13
+  holdDuration: 0.2
   button: {fileID: 2490572910836796441}
   timeBetweenFunctionCalls: 0.05
 --- !u!4 &9067636096995070677

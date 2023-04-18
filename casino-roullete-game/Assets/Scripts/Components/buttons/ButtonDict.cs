@@ -10,6 +10,10 @@ namespace Commands
      
     public class ButtonDict : MonoBehaviour
     {
+
+
+        public static bool wheelanim=true;
+        public static bool previousclicked=false;
         public CharacterTable characterTable;
         public static bool winloss=false;
         public static int paymentWin;

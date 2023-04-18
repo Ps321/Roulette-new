@@ -12,7 +12,7 @@ namespace Components
     public class CameraPlayDisplay : MonoBehaviour
     {
 
-        public bool rotate=true;
+        public bool rotate=false;
         public Text t;
         public CharacterTable characterTable;
         public Animator mainCameraAnimator;
@@ -23,6 +23,7 @@ namespace Components
         public GameObject actualtable;
                 public GameObject notactualtable;
         public Text winnerText;
+        public bool spin=false;
 
         void Start()
         {
@@ -34,9 +35,13 @@ namespace Components
         public void AnimateMainCamera(bool isRound)
         {
 
+            Debug.Log(spin+"yeeeeeeeeeeeeee");
+            ButtonDict.wheelanim=spin;
             
             if(isRound==true){
+                 if(spin){
                 rouletteAnimator.SetBool("spin", isRound);
+                 }
                 gg.SetActive(true);
                actualtable.SetActive(false);
                audio.Stop();
@@ -44,7 +49,9 @@ namespace Components
             }
             else{
                 winnerText.text= ButtonDict.winnerval.ToString();
-                rouletteAnimator.SetBool("spin", isRound);
+               
+                    rouletteAnimator.SetBool("spin", isRound);
+               
                 gg.SetActive(false);
                               actualtable.SetActive(true);
                               audio.Play();
@@ -58,10 +65,12 @@ namespace Components
         public void setval(){
             rotate=!rotate;
             if(rotate){
-                t.text="Wheel Zoom On";
+                spin=true;
+                t.text="Wheel Zoom Off";
             }
             else{
-                t.text="Wheel Zoom Off";
+                spin=false;
+                t.text="Wheel Zoom On";
             }
         }
 

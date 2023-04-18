@@ -32,6 +32,9 @@ public class Timer1 : MonoBehaviourPunCallbacks
 
     public Text messages1;
 
+    public GameObject previousBet;
+        public GameObject BetOk;
+
     [PunRPC]
     void UpdateTimer(float value)
     {
@@ -78,6 +81,7 @@ void Start()
         }*/
          textval.text="0 : "+ Mathf.Round(timerValue).ToString();
         if(timerValue <=0){
+            ButtonDict.previousclicked=false;
            StartCoroutine(rulefetch());
            updatemoney=true;
             if(ButtonDict.myDictionary.Count!=0){
@@ -181,12 +185,23 @@ void Start()
     }
     void messages(){
         if(ButtonDict.first==0){
+            BetOk.SetActive(true);
+            previousBet.SetActive(false);
             messages1.text="Please Bet to start Game. MinimumBet=1";
         }
         if(ButtonDict.first==1){
+            if(ButtonDict.previousbet.Count>0 && ButtonDict.previousclicked==false){
+                previousBet.SetActive(true);
+                BetOk.SetActive(false);
+            }
+            else{
+                 previousBet.SetActive(false);
+                 BetOk.SetActive(true);
+            }
             messages1.text="Bet Now";
         }
         if(timerValue<=10){
+            BetOk.SetActive(true);
            messages1.text="Timer Up";
         }
     }

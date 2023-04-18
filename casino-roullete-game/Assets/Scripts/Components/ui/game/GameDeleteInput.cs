@@ -24,6 +24,12 @@ namespace Components
             if(ButtonDict.betok==false){
 
             ButtonDict.first=0;
+            int amount=0;
+           foreach (KeyValuePair<string, int> kvp in ButtonDict.myDictionary)
+{
+    amount+=kvp.Value;
+}
+            characterTable.characterMoney.characterMoney.Value+=amount;
              ButtonDict.myDictionary.Clear();
             gameCmdFactory.ResetTableTurn(magnetDestroyerDisplay, characterTable).Execute();
             characterTable.currentTableActive.Value=false;

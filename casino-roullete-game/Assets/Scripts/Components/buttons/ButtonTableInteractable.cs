@@ -27,9 +27,11 @@ namespace Commands
 
             foreach(GameObject previouschip in gg1){
                 if(previouschip.GetComponent<ChipGame>().chipname==buttonData.name){
+                   if(previouschip.transform.childCount>0){ 
+                    
                     previouschip.GetComponent<SpriteRenderer>().enabled=false;
                    previouschip.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled=false;
-                  //  Destroy(previouschip);
+                 } //  Destroy(previouschip);
                 }
             }
 

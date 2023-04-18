@@ -43,7 +43,7 @@ void Start()
 
     void CompareGameObjects()
 {
-    for(int i=0;i<7;i++)
+    for(int i=0;i<=7;i++)
     if(ButtonDict.highlightedButton.name == bb[i].name)
     {
         c=i;
