@@ -508,6 +508,7 @@ namespace Infrastructure
                 }
 
 
+                    Debug.Log(proceed+"huaaaa");
 
                 if (proceed == "12_1")
                 {
@@ -586,6 +587,24 @@ namespace Infrastructure
                     }
 
 
+                }else{
+                    int temprandomnumber=int.MaxValue;
+                    for (int i = 0; i <= 37; i++)
+                    {
+                        string s = i.ToString();
+                        if (ButtonDict.myDictionary.ContainsKey(s))
+                        {
+                            if (ButtonDict.myDictionary[s] < lowestValue)
+                            {
+                                lowestValue = ButtonDict.myDictionary[i.ToString()];
+                                temprandomnumber = i;
+                            }
+                        }
+                    }
+
+                    if(ButtonDict.myDictionary[proceed]*3 >=ButtonDict.myDictionary[temprandomnumber.ToString()]){
+                        randomNumber=temprandomnumber;
+                    }
                 }
                 }
 
