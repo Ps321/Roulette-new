@@ -18,4 +18,7 @@ public class ganeHandler : MonoBehaviour
     public void logout(){
         SceneManager.LoadScene(1);
     }
+    public void reload(){
+        SceneManager.LoadScene(2);
+    }
 }

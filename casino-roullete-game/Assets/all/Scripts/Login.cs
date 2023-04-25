@@ -55,6 +55,8 @@ public class Login : MonoBehaviour
                 else{
                     Debug.Log(s); //Output 1
                     PlayerPrefs.SetInt("id",int.Parse(s.ToString()));
+                    PlayerPrefs.SetString("username",username);
+                     PlayerPrefs.SetString("password",password);
                     SceneManager.LoadScene(2);
                 }
             }

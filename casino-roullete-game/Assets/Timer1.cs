@@ -191,8 +191,14 @@ void Start()
         }
         if(ButtonDict.first==1){
             if(ButtonDict.previousbet.Count>0 && ButtonDict.previousclicked==false){
-                previousBet.SetActive(true);
+                if(ButtonDict.myDictionary.Count>0){
+                    previousBet.SetActive(false);
+                    BetOk.SetActive(true);
+                }else{
+                     previousBet.SetActive(true);
                 BetOk.SetActive(false);
+                }
+               
             }
             else{
                  previousBet.SetActive(false);

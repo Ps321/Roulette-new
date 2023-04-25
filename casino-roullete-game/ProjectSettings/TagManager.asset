@@ -10,6 +10,8 @@ TagManager:
   - ChipSelectUI
   - AnchorSelectUI
   - ChipContainer
+  - recievabletoggle
+  - transferabletoggle
   layers:
   - Default
   - TransparentFX
