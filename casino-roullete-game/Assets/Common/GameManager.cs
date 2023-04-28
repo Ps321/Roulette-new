@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.NetworkInformation;
 using Components;
+using Commands;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -149,6 +150,17 @@ namespace Managers
         public void ToggleGame()
         {
             UpdateState(GameState.RUNNING);
+        }
+        private void Update() {
+            if(ButtonDict.gameclose==1){
+                OnGameClosed();
+                UpdateState(GameState.PAUSED);
+                ButtonDict.gameclose=0;
+            }
+            if(ButtonDict.loadgame==1){
+                ToggleGame();
+                ButtonDict.loadgame=0;
+            }
         }
 
         // Unity event

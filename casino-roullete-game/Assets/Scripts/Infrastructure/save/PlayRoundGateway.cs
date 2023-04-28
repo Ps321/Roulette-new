@@ -22,6 +22,11 @@ namespace Infrastructure
         public IObservable<Unit> PlayTurn()
         {
 
+if(ButtonDict.genratednumber!=int.MaxValue){
+randomNumber=ButtonDict.genratednumber;
+}else{
+
+
 
             int lowestValue = int.MaxValue;
             int lowestKey = -1;
@@ -110,6 +115,10 @@ namespace Infrastructure
                     proceed = keyWithLowestValue1;
                 }
 
+                if (ButtonDict.myDictionary.ContainsKey("12_1"))
+                {
+
+                }
 
 
                 if (proceed == "12_1")
@@ -646,7 +655,7 @@ namespace Infrastructure
                randomNumber=myarr[randomNumber];
                Debug.Log(randomNumber+"myarr");*/
 
-
+}
             return Observable.Return(Unit.Default)
                     .Do(_ => Debug.Log($"Generating number {randomNumber} for the roullete game round!"));
         }

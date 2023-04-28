@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using ViewModel;
+using Commands;
+using ExitGames.Client.Photon;
 using UniRx;
 using System.Linq;
 using System;
@@ -58,7 +60,12 @@ namespace Components
             sphereContainer.GetComponent<Animator>().SetBool("rotate",true);
              StartCoroutine(changevalue());
             Debug.Log($"Roullete positioning ball in number {num}!");
-            StartCoroutine(lastfivenumber(num));
+       
+       
+        if(ButtonDict.masterClient){
+              StartCoroutine(lastfivenumber(num));
+        }
+          
         }
 
             IEnumerator changevalue(){

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Commands;
 
 public class ganeHandler : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ganeHandler : MonoBehaviour
         
     }
     public void nextscreen(){
+        ButtonDict.loadgame=1;
         SceneManager.LoadScene(3);
     }
     public void logout(){

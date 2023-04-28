@@ -26,7 +26,10 @@ void Start()
 
     public void OnClick(int num)
     {
-        audio.Play();
+        if(ButtonDict.buttonenable==true){
+             audio.Play();
+        }
+       
         CompareGameObjects();
         if (ButtonDict.highlightedButton == null)
         {

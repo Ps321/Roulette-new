@@ -35,7 +35,7 @@ namespace Components
         public void AnimateMainCamera(bool isRound)
         {
 
-            Debug.Log(spin+"yeeeeeeeeeeeeee");
+            
             ButtonDict.wheelanim=spin;
             
             if(isRound==true){

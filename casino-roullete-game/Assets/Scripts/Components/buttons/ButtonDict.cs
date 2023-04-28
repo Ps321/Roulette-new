@@ -15,11 +15,15 @@ namespace Commands
         public static bool wheelanim=true;
         public static bool previousclicked=false;
         public CharacterTable characterTable;
+
+        public static bool masterClient=false; 
         public static bool winloss=false;
         public static int paymentWin;
         public static int paymentLost;
 
         public static int first=0;
+
+        public static int genratednumber=int.MaxValue;
         public static int loadedfirst=0;
         public static int lastfive=0;
         public static int first_1=0;
@@ -37,6 +41,9 @@ namespace Commands
 
         public static bool buttonenable=true;
         public Text winnertext;
+
+        public static int gameclose=0;
+        public static int loadgame=0;
         public static bool updatekro=true;
         public static int[] c3=new int[] { 3,6,9,12,15,18,21,24,27,30,33,36};
         public static int[] c2=new int[] { 2,5,8,11,14,17,20,23,26,29,32,35};
@@ -49,6 +56,7 @@ namespace Commands
         public static Dictionary<string,int> myDictionary;
 
         public static Dictionary<string,int> previousbet;
+        public static Dictionary<string,int> allnumbers;
         
         // Start is called before the first frame update
         void Start()
@@ -75,26 +83,30 @@ namespace Commands
 
         IEnumerator takething(){
             if(characterTable.characterMoney.currentWinnerValue.Value>=5000){
-                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-55){
-                yield return new WaitForSeconds(0.05f);
-                characterTable.characterMoney.AddCash1(55);
-                characterTable.characterMoney.currentWinnerValue.Value-=55;
+                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                yield return new WaitForSeconds(0.0001f);
+                characterTable.characterMoney.AddCash1(1);
+                characterTable.characterMoney.currentWinnerValue.Value-=1;
             }
             }
 
             else if(characterTable.characterMoney.currentWinnerValue.Value>=1000){
-                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-25){
-                yield return new WaitForSeconds(0.05f);
-                characterTable.characterMoney.AddCash1(25);
-                characterTable.characterMoney.currentWinnerValue.Value-=25;
+                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                yield return new WaitForSeconds(0.001f);
+                characterTable.characterMoney.AddCash1(1);
+                characterTable.characterMoney.currentWinnerValue.Value-=1;
             }
             }
             else{
-                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>=0;i=i-7){
-                yield return new WaitForSeconds(0.05f);
-                characterTable.characterMoney.AddCash1(7);
-                characterTable.characterMoney.currentWinnerValue.Value-=7;
+                int i;
+                 for( i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                yield return new WaitForSeconds(0.001f);
+                characterTable.characterMoney.AddCash1(1);
+                characterTable.characterMoney.currentWinnerValue.Value-=1;
             }
+            
+          
+
             }
 
            

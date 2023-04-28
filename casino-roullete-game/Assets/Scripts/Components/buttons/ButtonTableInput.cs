@@ -132,6 +132,9 @@ namespace Commands
         }
         public void Click1()
         {
+            if(characterTable.characterMoney.characterMoney.Value<=ButtonDict.currentchipvalue){
+            return;
+            }
             if (ButtonDict.betok)
             {
                 return;

@@ -783,7 +783,7 @@ ScriptsOnlyBuild:
     className: ObservableSubmitTrigger
   - hash:
       serializedVersion: 2
-      Hash: b790803cb9cb91f56a5b013d53afbb3f
+      Hash: db4395ee757ff8f8d7f38a4d524dd273
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Timer1
@@ -2403,7 +2403,7 @@ ScriptsOnlyBuild:
     className: FriendItem
   - hash:
       serializedVersion: 2
-      Hash: ad8ce5255906931e3f9439ed93ec8db2
+      Hash: f6cd1e760827e6b9874524843c0f4e9b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager

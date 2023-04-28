@@ -31,7 +31,9 @@ public class ButtonScript : MonoBehaviour
         if(ButtonDict.first==0){
             return;
         }
+      if(chartacterTable.characterMoney.characterMoney.Value>=ButtonDict.currentchipvalue){
       
+      }
 
         if(chartacterTable.currentTableActive.Value){
         GameObject gg=Instantiate(objectToInstantiate,btn.transform.position,Quaternion.identity,parentobject.transform);
