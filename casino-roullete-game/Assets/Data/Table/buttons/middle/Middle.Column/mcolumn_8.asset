@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3c7ad8e369e7e4ba39829fe06781ef, type: 3}
   m_Name: mcolumn_8
   m_EditorClassIdentifier: 
+  buttonName: mcolumn_8
   buttonValue: 0700000008000000
   buttonKey: 1
   isPleno: 0
   currentChipsOnTop: 0
-  currentSpritePivot: {x: 0, y: 0}
+  currentSpritePivot: {x: -5.731552, y: -2.5478024}
   currentOffset: {x: 0, y: 0}

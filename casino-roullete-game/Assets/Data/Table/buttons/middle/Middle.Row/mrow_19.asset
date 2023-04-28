@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c3c7ad8e369e7e4ba39829fe06781ef, type: 3}
   m_Name: mrow_19
   m_EditorClassIdentifier: 
+  buttonName: mrow_19
   buttonValue: 1000000013000000
   buttonKey: 1
   isPleno: 0

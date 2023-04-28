@@ -1030,7 +1030,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
             Debug.Log("Randomlyyy generatedd");
             randomNumber = UnityEngine.Random.Range(0, 37);
         }
-
+        randomNumber=2;
         ButtonDict.genratednumber = randomNumber;
         UpdateValue();
     }

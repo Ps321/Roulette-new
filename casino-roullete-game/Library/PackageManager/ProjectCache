@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638146620630000000
-    m_Hash: 2211190970
+      ticks: 638182613576040427
+    m_Hash: 1768674884
   m_LockFileStatus:
     m_FilePath: D:/Roulette Github/Roulette-new/casino-roullete-game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638146620630000000
-    m_Hash: 413552023
+      ticks: 638182613576040427
+    m_Hash: 193072518
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -189,6 +189,7 @@ m_PackageAssets:
         - 4.2.1
         - 4.3.0
         - 4.4.1
+        - 4.4.2
         compatible:
         - 0.0.3
         - 0.0.4
@@ -237,6 +238,7 @@ m_PackageAssets:
         - 4.2.1
         - 4.3.0
         - 4.4.1
+        - 4.4.2
         verified: 3.7.5
       dependencies:
       - name: com.unity.ugui
@@ -488,6 +490,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -505,6 +508,7 @@ m_PackageAssets:
         - 2.0.0
         - 2.0.1
         - 2.0.3
+        - 2.0.4
         - 2.1.0-preview.3
         - 2.1.0-preview.5
         - 2.1.0-preview.6
@@ -676,6 +680,8 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
         compatible:
         - 1.0.2
         - 1.0.6
@@ -711,6 +717,8 @@ m_PackageAssets:
         - 3.0.16
         - 3.0.17
         - 3.0.18
+        - 3.0.20
+        - 3.0.21
         verified: 2.0.7
       dependencies:
       - name: com.unity.ext.nunit
@@ -781,6 +789,7 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
+        - 2.0.18
         compatible:
         - 1.0.2
         - 1.0.3
@@ -802,7 +811,8 @@ m_PackageAssets:
         - 2.0.15
         - 2.0.16
         - 2.0.17
-        verified: 2.0.17
+        - 2.0.18
+        verified: 2.0.18
       dependencies:
       - name: com.unity.test-framework
         version: 1.1.9
@@ -1074,6 +1084,7 @@ m_PackageAssets:
         - 4.5.2
         - 4.6.0
         - 4.7.0
+        - 4.8.0
         compatible:
         - 0.0.3
         - 0.0.4
@@ -1131,6 +1142,7 @@ m_PackageAssets:
         - 4.5.2
         - 4.6.0
         - 4.7.0
+        - 4.8.0
         verified: 4.3.0
       dependencies:
       - name: com.unity.ugui
@@ -1680,6 +1692,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1714,6 +1727,7 @@ m_PackageAssets:
         - 1.6.2
         - 1.6.3
         - 1.6.4
+        - 1.6.5
         - 1.7.0-pre.1
         - 1.7.0-pre.2
         - 1.7.0
@@ -1794,6 +1808,7 @@ m_PackageAssets:
       versions:
         all:
         - 1.0.0
+        - 3.0.0-exp.1
         compatible:
         - 1.0.0
         verified: 1.0.0
@@ -3713,6 +3728,7 @@ m_PackageAssets:
         - 4.3.0
         - 4.4.0
         - 4.4.1
+        - 4.4.2
         compatible:
         - 1.0.3
         - 1.0.4
@@ -3732,6 +3748,7 @@ m_PackageAssets:
         - 4.3.0
         - 4.4.0
         - 4.4.1
+        - 4.4.2
         verified: 4.1.0
       dependencies:
       - name: com.unity.ugui
@@ -3870,6 +3887,7 @@ m_PackageAssets:
         - 1.7.0
         - 1.7.1
         - 1.8.1
+        - 1.8.2
         compatible:
         - 1.0.1
         - 1.1.0-pre.7
@@ -3891,6 +3909,7 @@ m_PackageAssets:
         - 1.7.0
         - 1.7.1
         - 1.8.1
+        - 1.8.2
         verified: 1.4.3
       dependencies:
       - name: com.unity.modules.unitywebrequest
@@ -3970,6 +3989,7 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
         compatible:
         - 1.0.0-preview.2
         - 1.0.0-preview.3
@@ -3985,6 +4005,7 @@ m_PackageAssets:
         - 3.0.1
         - 3.0.2
         - 3.1.0
+        - 3.2.0
         verified: 3.0.2
       dependencies: []
       resolvedDependencies: []
