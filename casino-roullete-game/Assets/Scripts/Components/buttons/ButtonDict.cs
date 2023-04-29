@@ -49,6 +49,12 @@ namespace Commands
         public static int[] c2=new int[] { 2,5,8,11,14,17,20,23,26,29,32,35};
         public static int[] c1=new int[] { 1,4,7,10,13,16,19,22,25,28,31,34};
 
+        public static int[] col=new int[] {2,3,5,6,8,9,11,12,14,15,17,18,20,21,23,24,26,27,29,30,32,33,35,36 };
+        public static int[] col3=new int[] {1,4,7,10,13,16,19,22,25,28,31,34 };
+        public static int[] center=new int[] {5,6,8,9,11,12,14,15,17,18,20,21,23,24,26,27,29,30,32,33,35,36};
+        
+        
+        
         public static int[] red=new int[] { 1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36};
 
        public static int[] black=new int[] { 2,4,6,8,10,11,13,15,17,20,24,22,26,28,29,31,33,35};   

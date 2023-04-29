@@ -27,183 +27,308 @@ randomNumber=ButtonDict.genratednumber;
 }else{
 
 
+        int lowestValue = int.MaxValue;
+        int lowestKey = -1;
+        randomNumber = -1;
 
-            int lowestValue = int.MaxValue;
-            int lowestKey = -1;
-            randomNumber = -1;
-            Debug.Log("Rule value" + ButtonDict.rule);
-            if (ButtonDict.rule == 1)
-            {
-                Dictionary<string, int> dict1 = new Dictionary<string, int>();
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1"))
+
+        
+
+            Dictionary<string, int> dict1 = new Dictionary<string, int>();
+            /***Lowesttt rowwwwwww****/////
+            
+            if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1"))
                 {
-                    dict1.Add("E1_Eightteen_1", ButtonDict.myDictionary["E1_Eightteen_1"]);
+                   for(int i=1;i<=18;i++){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["E1_Eightteen_1"]*2;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["E1_Eightteen_1"]*2);
+                    }
+                   }
                 }
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2"))
+
+            if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2"))
                 {
-                    dict1.Add("E1_Eightteen_2", ButtonDict.myDictionary["E1_Eightteen_2"]);
+                   for(int i=19;i<=36;i++){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["E1_Eightteen_2"]*2;
+                    }
+                    else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["E1_Eightteen_2"]*2);
+                    }
+                   }
                 }
-                if (ButtonDict.myDictionary.ContainsKey("E2_Black"))
+
+
+            if (ButtonDict.myDictionary.ContainsKey("E2_Black"))
                 {
-                    dict1.Add("E2_Black", ButtonDict.myDictionary["E2_Black"]);
+                   Debug.Log("Blackkkkkk");
+                   for(int i=0;i<18;i++){
+                    if(dict1.ContainsKey(ButtonDict.black[i].ToString())){
+                        Debug.Log("Blackkkkkk Update");
+                        dict1[ButtonDict.black[i].ToString()]+=ButtonDict.myDictionary["E2_Black"]*2;
+                    }
+                    else{
+                         Debug.Log("Blackkkkkk Insert");
+                        dict1.Add(ButtonDict.black[i].ToString(),ButtonDict.myDictionary["E2_Black"]*2);
+                    }
+                   }
                 }
+
+
                 if (ButtonDict.myDictionary.ContainsKey("E2_Red"))
                 {
-                    dict1.Add("E2_Red", ButtonDict.myDictionary["E2_Red"]);
+                   for(int i=0;i<18;i++){
+                    if(dict1.ContainsKey(ButtonDict.red[i].ToString())){
+                        dict1[ButtonDict.red[i].ToString()]+=ButtonDict.myDictionary["E2_Red"]*2;
+                    }
+                    else{
+                        dict1.Add(ButtonDict.red[i].ToString(),ButtonDict.myDictionary["E2_Red"]*2);
+                    }
+                   }
                 }
+
+
                 if (ButtonDict.myDictionary.ContainsKey("E_Even"))
                 {
-                    dict1.Add("E_Even", ButtonDict.myDictionary["E_Even"]);
+                   for(int i=2;i<=36;i=i+2){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["E_Even"]*2;
+                    }
+                    else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["E_Even"]*2);
+                    }
+                   }
                 }
+
                 if (ButtonDict.myDictionary.ContainsKey("E_Odd"))
                 {
-                    dict1.Add("E_Odd", ButtonDict.myDictionary["E_Odd"]);
+                   for(int i=1;i<=35;i=i+2){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["E_Odd"]*2;
+                    }
+                    else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["E_Odd"]*2);
+                    }
+                   }
                 }
-                string keyWithLowestValue1 = dict1.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
+               
 
 
 
-                Dictionary<string, int> dict = new Dictionary<string, int>();
 
-
-                if (ButtonDict.myDictionary.ContainsKey("12_1"))
+            /***** 2nd lowest rowww***/
+            if (ButtonDict.myDictionary.ContainsKey("12_1"))
                 {
-                    dict.Add("12_1", ButtonDict.myDictionary["12_1"]);
+
+                     for(int i=1;i<=12;i++){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["12_1"]*3;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["12_1"]*3);
+                    }
+                   }
                 }
+
                 if (ButtonDict.myDictionary.ContainsKey("12_2"))
                 {
-                    dict.Add("12_2", ButtonDict.myDictionary["12_2"]);
+
+                     for(int i=13;i<=24;i++){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["12_2"]*3;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["12_2"]*3);
+                    }
+                   }
                 }
-                if (ButtonDict.myDictionary.ContainsKey("12_3"))
+
+                 if (ButtonDict.myDictionary.ContainsKey("12_3"))
                 {
-                    dict.Add("12_3", ButtonDict.myDictionary["12_3"]);
+
+                     for(int i=25;i<=36;i++){
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary["12_3"]*3;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary["12_3"]*3);
+                    }
+                   }
                 }
+
+
+
+                /**** Coloums*****/
+
                 if (ButtonDict.myDictionary.ContainsKey("c1"))
                 {
-                    dict.Add("c1", ButtonDict.myDictionary["c1"]);
+
+                     for(int i=0;i<12;i++){
+                    if(dict1.ContainsKey(ButtonDict.c1[i].ToString())){
+                        dict1[ButtonDict.c1[i].ToString()]+=ButtonDict.myDictionary["c1"]*3;
+                    }else{
+                        dict1.Add(ButtonDict.c1[i].ToString(),ButtonDict.myDictionary["c1"]*3);
+                    }
+                   }
                 }
+
                 if (ButtonDict.myDictionary.ContainsKey("c2"))
                 {
-                    dict.Add("c2", ButtonDict.myDictionary["c2"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c3"))
-                {
-                    dict.Add("c3", ButtonDict.myDictionary["c3"]);
-                }
 
-                string keyWithLowestValue = dict.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
-
-                string proceed = "";
-
-                if (keyWithLowestValue != "" && keyWithLowestValue1 != "" && keyWithLowestValue != null && keyWithLowestValue1 != null)
-                {
-                    if (ButtonDict.myDictionary[keyWithLowestValue] * 2 < ButtonDict.myDictionary[keyWithLowestValue1])
-                    {
-                        proceed = keyWithLowestValue;
+                     for(int i=0;i<12;i++){
+                    if(dict1.ContainsKey(ButtonDict.c2[i].ToString())){
+                        dict1[ButtonDict.c2[i].ToString()]+=ButtonDict.myDictionary["c2"]*3;
+                    }else{
+                        dict1.Add(ButtonDict.c2[i].ToString(),ButtonDict.myDictionary["c2"]*3);
                     }
-                    else
-                    {
-                        proceed = keyWithLowestValue1;
+                   }
+                }
+
+                 if (ButtonDict.myDictionary.ContainsKey("c3"))
+                {
+
+                     for(int i=0;i<12;i++){
+                    if(dict1.ContainsKey(ButtonDict.c3[i].ToString())){
+                        dict1[ButtonDict.c3[i].ToString()]+=ButtonDict.myDictionary["c3"]*3;
+                    }else{
+                        dict1.Add(ButtonDict.c3[i].ToString(),ButtonDict.myDictionary["c3"]*3);
                     }
-                }
-                else if (keyWithLowestValue != "" && keyWithLowestValue != null)
-                {
-                    proceed = keyWithLowestValue;
-                }
-                else
-                {
-                    proceed = keyWithLowestValue1;
+                   }
                 }
 
-                if (ButtonDict.myDictionary.ContainsKey("12_1"))
-                {
-
-                }
-
-
-                if (proceed == "12_1")
-                {
-                    randomNumber = UnityEngine.Random.Range(1, 13);
-                }
-                if (proceed == "12_2")
-                {
-                    randomNumber = UnityEngine.Random.Range(13, 25);
-                }
-                if (proceed == "12_3")
-                {
-                    randomNumber = UnityEngine.Random.Range(25, 37);
-                }
-                if (proceed == "c1")
-                {
-                    int val = UnityEngine.Random.Range(1, 13);
-                    randomNumber = ButtonDict.c1[val];
-                }
-                if (proceed == "c2")
-                {
-                    int val = UnityEngine.Random.Range(0, 13);
-                    randomNumber = ButtonDict.c2[val];
-                }
-                if (proceed == "c3")
-                {
-                    int val = UnityEngine.Random.Range(0, 13);
-                    randomNumber = ButtonDict.c3[val];
-                }
-
-                if (proceed == "E1_Eightteen_1")
-                {
-                    randomNumber = UnityEngine.Random.Range(1, 19);
-                }
-                if (proceed == "E1_Eightteen_2")
-                {
-                    randomNumber = UnityEngine.Random.Range(18, 37);
-                }
-                if (proceed == "E2_Black")
-                {
-                    int val = UnityEngine.Random.Range(0, 18);
-                    randomNumber = ButtonDict.black[val];
-                }
-                if (proceed == "E2_Red")
-                {
-                    int val = UnityEngine.Random.Range(0, 18);
-                    randomNumber = ButtonDict.red[val];
-                }
-                if (proceed == "E_Even")
-                {
-                    randomNumber = UnityEngine.Random.Range(0, 19) * 2;
-
-                }
-                if (proceed == "E_Odd")
-                {
-                    randomNumber = (UnityEngine.Random.Range(0, 19) * 2) + 1;
-
-                }
-
-
-
-
-                if (randomNumber == -1)
-                {
-
-                    for (int i = 0; i <= 37; i++)
+                /*****Numbers******/
+                     for(int i=0;i<=37;i++){
+                         if (ButtonDict.myDictionary.ContainsKey(i.ToString()))
                     {
-                        string s = i.ToString();
-                        if (ButtonDict.myDictionary.ContainsKey(s))
-                        {
-                            if (ButtonDict.myDictionary[s] < lowestValue)
-                            {
-                                lowestValue = ButtonDict.myDictionary[i.ToString()];
-                                randomNumber = i;
-                            }
-                        }
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary[i.ToString()]*36;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary[i.ToString()]*36);
+                    }
+                   }
+                     }
+
+
+            /***Middle Rowss****/
+
+            for(int i=4;i<=36;i++){
+                string s="mrow_"+i;
+                    if (ButtonDict.myDictionary.ContainsKey(s))
+                    {
+                    if(dict1.ContainsKey(i.ToString())){
+                        dict1[i.ToString()]+=ButtonDict.myDictionary[s]*18;
+                    }else{
+                        dict1.Add(i.ToString(),ButtonDict.myDictionary[s]*18);
+                    }
+                    if(dict1.ContainsKey((i-3).ToString())){
+                        dict1[(i-3).ToString()]+=ButtonDict.myDictionary[s]*18;
+                    }else{
+                        dict1.Add((i-3).ToString(),ButtonDict.myDictionary[s]*18);
                     }
 
+                   }
+              }
 
-                }
+
+
+
+
+            /***Middle Coloums****/
+
+            for(int i=0;i< ButtonDict.col.Length;i++){
+                string s="mcolumn_"+ButtonDict.col[i];
+                    if (ButtonDict.myDictionary.ContainsKey(s))
+                    {
+                    if(dict1.ContainsKey(ButtonDict.col[i].ToString())){
+                        dict1[ButtonDict.col[i].ToString()]+=ButtonDict.myDictionary[s]*18;
+                    }else{
+                        dict1.Add(ButtonDict.col[i].ToString(),ButtonDict.myDictionary[s]*18);
+                    }
+                    if(dict1.ContainsKey((ButtonDict.col[i]-1).ToString())){
+                        dict1[(ButtonDict.col[i]-1).ToString()]+=ButtonDict.myDictionary[s]*18;
+                    }else{
+                        dict1.Add((ButtonDict.col[i]-1).ToString(),ButtonDict.myDictionary[s]*18);
+                    }
+
+                   }
+              }
+
+
+              /***Coloumn with 3 values Coloums****/
+
+            for(int i=0;i< ButtonDict.col3.Length;i++){
+                string s="mcolumn_"+ButtonDict.col3[i];
+                    if (ButtonDict.myDictionary.ContainsKey(s))
+                    {
+                    if(dict1.ContainsKey(ButtonDict.col3[i].ToString())){
+                        dict1[ButtonDict.col3[i].ToString()]+=ButtonDict.myDictionary[s]*12;
+                    }else{
+                        dict1.Add(ButtonDict.col3[i].ToString(),ButtonDict.myDictionary[s]*12);
+                    }
+                    if(dict1.ContainsKey((ButtonDict.col3[i]+1).ToString())){
+                        dict1[(ButtonDict.col3[i]+1).ToString()]+=ButtonDict.myDictionary[s]*12;
+                    }else{
+                        dict1.Add((ButtonDict.col3[i]+1).ToString(),ButtonDict.myDictionary[s]*12);
+                    }
+
+                    if(dict1.ContainsKey((ButtonDict.col3[i]+2).ToString())){
+                        dict1[(ButtonDict.col3[i]+2).ToString()]+=ButtonDict.myDictionary[s]*12;
+                    }else{
+                        dict1.Add((ButtonDict.col3[i]+2).ToString(),ButtonDict.myDictionary[s]*12);
+                    }
+
+                   }
+              }
+
+            /***Middle Center Rows and Coloums****/
+
+            for(int i=0;i< ButtonDict.center.Length;i++){
+                string s="mcorner_"+ButtonDict.center[i];
+                    if (ButtonDict.myDictionary.ContainsKey(s))
+                    {
+                    if(dict1.ContainsKey(ButtonDict.center[i].ToString())){
+                        dict1[ButtonDict.center[i].ToString()]+=ButtonDict.myDictionary[s]*9;
+                    }else{
+                        dict1.Add(ButtonDict.center[i].ToString(),ButtonDict.myDictionary[s]*9);
+                    }
+                    if(dict1.ContainsKey((ButtonDict.center[i]-1).ToString())){
+                        dict1[(ButtonDict.center[i]-1).ToString()]+=ButtonDict.myDictionary[s]*9;
+                    }else{
+                        dict1.Add((ButtonDict.center[i]-1).ToString(),ButtonDict.myDictionary[s]*9);
+                    }
+
+                    if(dict1.ContainsKey((ButtonDict.center[i]-3).ToString())){
+                        dict1[(ButtonDict.center[i]-3).ToString()]+=ButtonDict.myDictionary[s]*9;
+                    }else{
+                        dict1.Add((ButtonDict.center[i]-3).ToString(),ButtonDict.myDictionary[s]*9);
+                    }
+
+                    if(dict1.ContainsKey((ButtonDict.center[i]-4).ToString())){
+                        dict1[(ButtonDict.center[i]-4).ToString()]+=ButtonDict.myDictionary[s]*9;
+                    }else{
+                        dict1.Add((ButtonDict.center[i]-4).ToString(),ButtonDict.myDictionary[s]*9);
+                    }
+
+                   }
+              }
+
+
+
+
+
+
+
+        if(ButtonDict.rule==1){
+          
+
+         if(dict1.Count>0){
+        string lowestValueKey = dict1.OrderBy(kv => kv.Value).First().Key;
+        randomNumber=int.Parse(lowestValueKey);
+
+            }else{
+                randomNumber= UnityEngine.Random.Range(0, 38);
             }
-            else
-            {
-
-                int[] myarr = new int[38];
+        }else{
+            int[] myarr = new int[38];
                 int index = 0;
                 int c = 0;
 
@@ -222,198 +347,7 @@ randomNumber=ButtonDict.genratednumber;
                     }
                 }
 
-                List<int> list = new List<int>(myarr);
-
-
-
-
-                if (ButtonDict.myDictionary.ContainsKey("12_1"))
-                {
-
-                    for (int i = 1; i <= 12; i++)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-                if (ButtonDict.myDictionary.ContainsKey("12_2"))
-                {
-
-                    for (int i = 13; i <= 24; i++)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-                if (ButtonDict.myDictionary.ContainsKey("12_3"))
-                {
-
-                    for (int i = 25; i <= 36; i++)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c1"))
-                {
-
-                    for (int i = 0; i < 12; i++)
-                    {
-                        if (Array.IndexOf(myarr, ButtonDict.c1[i]) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, ButtonDict.c1[i]));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-                if (ButtonDict.myDictionary.ContainsKey("c2"))
-                {
-
-                    for (int i = 0; i < 12; i++)
-                    {
-                        if (Array.IndexOf(myarr, ButtonDict.c2[i]) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, ButtonDict.c2[i]));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c3"))
-                {
-
-                    for (int i = 0; i < 12; i++)
-                    {
-                        if (Array.IndexOf(myarr, ButtonDict.c3[i]) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, ButtonDict.c3[i]));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1"))
-                {
-
-                    for (int i = 1; i <= 18; i++)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2"))
-                {
-
-                    for (int i = 19; i <= 36; i++)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-
-
-                if (ButtonDict.myDictionary.ContainsKey("E2_Black"))
-                {
-
-                    for (int i = 0; i < 18; i++)
-                    {
-                        if (Array.IndexOf(myarr, ButtonDict.black[i]) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, ButtonDict.black[i]));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-                if (ButtonDict.myDictionary.ContainsKey("E2_Red"))
-                {
-
-                    for (int i = 0; i < 18; i++)
-                    {
-                        if (Array.IndexOf(myarr, ButtonDict.red[i]) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, ButtonDict.red[i]));
-                            myarr = list.ToArray();
-                            i = i - 1;
-                        }
-                    }
-
-                }
-
-
-                if (ButtonDict.myDictionary.ContainsKey("E_Even"))
-                {
-
-                    for (int i = 2; i <= 36; i = i + 2)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 2;
-                        }
-                    }
-
-                }
-
-                if (ButtonDict.myDictionary.ContainsKey("E_Odd"))
-                {
-
-                    for (int i = 1; i <= 37; i = i + 2)
-                    {
-                        if (Array.IndexOf(myarr, i) != -1)
-                        {
-                            list.RemoveAt(Array.IndexOf(myarr, i));
-                            myarr = list.ToArray();
-                            i = i - 2;
-                        }
-                    }
-
-                }
-
-
-
-
-                Debug.Log("Array: " + string.Join(", ", myarr));
-                Debug.Log("List: " + string.Join(", ", list));
-
-                myarr = list.ToArray();
-                int count = 0;
+                 int count = 0;
                 for (int i = 0; i < myarr.Length; i++)
                 {
                     if (myarr[i] != -1)
@@ -422,239 +356,29 @@ randomNumber=ButtonDict.genratednumber;
                     }
                 }
 
-                Debug.Log(" not Randomlyyy generatedd" + myarr.Length);
+               
                 if (count > 0)
                 {
                     
                     int aaaa = UnityEngine.Random.Range(0, count);
                     randomNumber = myarr[aaaa];
-                }
-                else{
-
-
-                    Debug.Log("bET IS PLACED ON EVERY NUMBER");
-
-
-                     Dictionary<string, int> dict1 = new Dictionary<string, int>();
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_1"))
-                {
-                    dict1.Add("E1_Eightteen_1", ButtonDict.myDictionary["E1_Eightteen_1"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E1_Eightteen_2"))
-                {
-                    dict1.Add("E1_Eightteen_2", ButtonDict.myDictionary["E1_Eightteen_2"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E2_Black"))
-                {
-                    dict1.Add("E2_Black", ButtonDict.myDictionary["E2_Black"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E2_Red"))
-                {
-                    dict1.Add("E2_Red", ButtonDict.myDictionary["E2_Red"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E_Even"))
-                {
-                    dict1.Add("E_Even", ButtonDict.myDictionary["E_Even"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("E_Odd"))
-                {
-                    dict1.Add("E_Odd", ButtonDict.myDictionary["E_Odd"]);
-                }
-                string keyWithLowestValue1 = dict1.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
-
-
-
-                Dictionary<string, int> dict = new Dictionary<string, int>();
-
-
-                if (ButtonDict.myDictionary.ContainsKey("12_1"))
-                {
-                    dict.Add("12_1", ButtonDict.myDictionary["12_1"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("12_2"))
-                {
-                    dict.Add("12_2", ButtonDict.myDictionary["12_2"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("12_3"))
-                {
-                    dict.Add("12_3", ButtonDict.myDictionary["12_3"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c1"))
-                {
-                    dict.Add("c1", ButtonDict.myDictionary["c1"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c2"))
-                {
-                    dict.Add("c2", ButtonDict.myDictionary["c2"]);
-                }
-                if (ButtonDict.myDictionary.ContainsKey("c3"))
-                {
-                    dict.Add("c3", ButtonDict.myDictionary["c3"]);
-                }
-
-                string keyWithLowestValue = dict.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
-
-                string proceed = "";
-
-                if (keyWithLowestValue != "" && keyWithLowestValue1 != "" && keyWithLowestValue != null && keyWithLowestValue1 != null)
-                {
-                    if (ButtonDict.myDictionary[keyWithLowestValue] * 2 < ButtonDict.myDictionary[keyWithLowestValue1])
-                    {
-                        proceed = keyWithLowestValue;
-                    }
-                    else
-                    {
-                        proceed = keyWithLowestValue1;
-                    }
-                }
-                else if (keyWithLowestValue != "" && keyWithLowestValue != null)
-                {
-                    proceed = keyWithLowestValue;
-                }
-                else
-                {
-                    proceed = keyWithLowestValue1;
-                }
-
-
-                    Debug.Log(proceed+"huaaaa");
-
-                if (proceed == "12_1")
-                {
-                    randomNumber = UnityEngine.Random.Range(1, 13);
-                }
-                if (proceed == "12_2")
-                {
-                    randomNumber = UnityEngine.Random.Range(13, 25);
-                }
-                if (proceed == "12_3")
-                {
-                    randomNumber = UnityEngine.Random.Range(25, 37);
-                }
-                if (proceed == "c1")
-                {
-                    int val = UnityEngine.Random.Range(1, 13);
-                    randomNumber = ButtonDict.c1[val];
-                }
-                if (proceed == "c2")
-                {
-                    int val = UnityEngine.Random.Range(0, 13);
-                    randomNumber = ButtonDict.c2[val];
-                }
-                if (proceed == "c3")
-                {
-                    int val = UnityEngine.Random.Range(0, 13);
-                    randomNumber = ButtonDict.c3[val];
-                }
-
-                if (proceed == "E1_Eightteen_1")
-                {
-                    randomNumber = UnityEngine.Random.Range(1, 19);
-                }
-                if (proceed == "E1_Eightteen_2")
-                {
-                    randomNumber = UnityEngine.Random.Range(18, 37);
-                }
-                if (proceed == "E2_Black")
-                {
-                    int val = UnityEngine.Random.Range(0, 18);
-                    randomNumber = ButtonDict.black[val];
-                }
-                if (proceed == "E2_Red")
-                {
-                    int val = UnityEngine.Random.Range(0, 18);
-                    randomNumber = ButtonDict.red[val];
-                }
-                if (proceed == "E_Even")
-                {
-                    randomNumber = UnityEngine.Random.Range(0, 19) * 2;
-
-                }
-                if (proceed == "E_Odd")
-                {
-                    randomNumber = (UnityEngine.Random.Range(0, 19) * 2) + 1;
-
-                }
-
-
-
-
-                if (randomNumber == -1)
-                {
-
-                    for (int i = 0; i <= 37; i++)
-                    {
-                        string s = i.ToString();
-                        if (ButtonDict.myDictionary.ContainsKey(s))
-                        {
-                            if (ButtonDict.myDictionary[s] < lowestValue)
-                            {
-                                lowestValue = ButtonDict.myDictionary[i.ToString()];
-                                randomNumber = i;
-                            }
-                        }
-                    }
-
-
                 }else{
-                    int temprandomnumber=int.MaxValue;
-                    for (int i = 0; i <= 37; i++)
-                    {
-                        string s = i.ToString();
-                        if (ButtonDict.myDictionary.ContainsKey(s))
-                        {
-                            if (ButtonDict.myDictionary[s] < lowestValue)
-                            {
-                                lowestValue = ButtonDict.myDictionary[i.ToString()];
-                                temprandomnumber = i;
-                            }
-                        }
-                    }
+                     if(dict1.Count>0){
+        string lowestValueKey = dict1.OrderBy(kv => kv.Value).First().Key;
+        randomNumber=int.Parse(lowestValueKey);
 
-                    if(ButtonDict.myDictionary[proceed]*3 >=ButtonDict.myDictionary[temprandomnumber.ToString()]){
-                        randomNumber=temprandomnumber;
-                    }
-                }
+            }else{
+                randomNumber= UnityEngine.Random.Range(0, 38);
+            }
                 }
 
-            }
 
-            if (randomNumber == -1)
-            {
-                Debug.Log("Randomlyyy generatedd");
-                randomNumber = UnityEngine.Random.Range(0, 37);
-            }
-            /* string keyWithLowestValue = ButtonDict.myDictionary.OrderBy(kvp => kvp.Value).FirstOrDefault().Key;
-             Debug.Log(keyWithLowestValue+"myarr");
+        }
 
-            if(keyWithLowestValue!=""){ 
+            
+            
 
-             randomNumber  = int.Parse(keyWithLowestValue);
-             int[] myarr=new int[36];
-             int index=0;
-
-             for(int i=0;i<36;i++){
-                 myarr[i]=-1;
-             }
-
-             for(int i=0;i<36;i++){
-                 if(!ButtonDict.myDictionary.ContainsKey(i.ToString())){
-                     myarr[index]=i;
-                 }
-             }
-            }
-            else{
-             randomNumber=UnityEngine.Random.Range(0,36);
-            }*/
-
-            /* randomNumber=Random.Range(0,2);
-
-               while(myarr[randomNumber]==-1){
-                   randomNumber=Random.Range(0,myarr.Length-1);
-               }
-               randomNumber=myarr[randomNumber];
-               Debug.Log(randomNumber+"myarr");*/
-
+        
 }
             return Observable.Return(Unit.Default)
                     .Do(_ => Debug.Log($"Generating number {randomNumber} for the roullete game round!"));

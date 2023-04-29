@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638182613576040427
-    m_Hash: 1768674884
+      ticks: 638146620630000000
+    m_Hash: 2211190970
   m_LockFileStatus:
     m_FilePath: D:/Roulette Github/Roulette-new/casino-roullete-game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638182613576040427
-    m_Hash: 193072518
+      ticks: 638146620630000000
+    m_Hash: 413552023
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:

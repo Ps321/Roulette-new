@@ -56,7 +56,7 @@ namespace Components
             _sphere.transform.rotation=Quaternion.identity;
             _sphere.SetActive(true);
             _sphere.transform.SetParent(sphereContainer.transform);
-            Debug.Log("Rotatopm"+_sphere.transform.rotation);
+           
             sphereContainer.GetComponent<Animator>().SetBool("rotate",true);
              StartCoroutine(changevalue());
             Debug.Log($"Roullete positioning ball in number {num}!");
