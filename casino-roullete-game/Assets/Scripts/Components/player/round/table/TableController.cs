@@ -61,6 +61,7 @@ namespace Components
 
             foreach(TableChips buttonChip in table.TableChips)
             {
+               
                 GameObject buttonInstance = GameObject.Find(buttonChip.idButton);
                 GameObject chipInstance = Instantiate(characterTable.chipPrefab);
                 

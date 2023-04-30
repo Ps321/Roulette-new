@@ -16,6 +16,7 @@ namespace Components
         public CharacterTable characterTable;
         public Text moneyLabel;
         public Text betLabel;
+        public GameObject Errorscreen;
         float timer=0.0f;
         float timeBetweenFunctionCalls=60.0f;
         bool update=true;
@@ -59,7 +60,7 @@ namespace Components
             WWWForm form = new WWWForm();
         form.AddField("id", PlayerPrefs.GetInt("id"));
         form.AddField("points", characterTable.characterMoney.getmoney());
-        
+         form.AddField("winnerval", ButtonDict.winnerval);
 
 
         using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/pointsupdate.php", form))
@@ -68,10 +69,12 @@ namespace Components
 
             if (www.result != UnityWebRequest.Result.Success)
             {
+                Errorscreen.SetActive(true);
                 Debug.Log(www.error);
             }
             else
             {
+                Errorscreen.SetActive(false);
                 Debug.Log("update points");            }
         }
         }

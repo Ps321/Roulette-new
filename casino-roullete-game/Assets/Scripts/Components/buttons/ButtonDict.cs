@@ -13,6 +13,9 @@ namespace Commands
 
 
         public static bool wheelanim=true;
+
+        public static int OnLoadWinner=0;
+        public static int OnWinnerUpdate=0;
         public static bool previousclicked=false;
         public CharacterTable characterTable;
 
@@ -63,6 +66,8 @@ namespace Commands
 
         public static Dictionary<string,int> previousbet;
         public static Dictionary<string,int> allnumbers;
+
+        public GameObject Errorscreen;
         
         // Start is called before the first frame update
         void Start()
@@ -74,7 +79,7 @@ namespace Commands
         private void Update() {
             if(updatekro==true){
                 
-                winnertext.text=characterTable.characterMoney.currentWinnerValue.Value.ToString();
+             //   winnertext.text=characterTable.characterMoney.currentWinnerValue.Value.ToString();
                 updatekro=false;
             }
         }
@@ -83,32 +88,35 @@ namespace Commands
         public void Take(){
          
           Debug.Log(characterTable.characterMoney.currentWinnerValue.Value);
-          StartCoroutine(takething());
+          
+             StartCoroutine(takething());
+          
+         
            
         }
 
         IEnumerator takething(){
-            if(characterTable.characterMoney.currentWinnerValue.Value>=5000){
+            if(ButtonDict.winnerval>=5000){
                  for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
                 yield return new WaitForSeconds(0.0001f);
                 characterTable.characterMoney.AddCash1(1);
-                characterTable.characterMoney.currentWinnerValue.Value-=1;
+                ButtonDict.winnerval-=1;
             }
             }
 
-            else if(characterTable.characterMoney.currentWinnerValue.Value>=1000){
+            else if(ButtonDict.winnerval>=1000){
                  for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
                 yield return new WaitForSeconds(0.001f);
                 characterTable.characterMoney.AddCash1(1);
-                characterTable.characterMoney.currentWinnerValue.Value-=1;
+                ButtonDict.winnerval-=1;
             }
             }
             else{
                 int i;
-                 for( i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                 for( i=ButtonDict.winnerval;i>0;i=i-1){
                 yield return new WaitForSeconds(0.001f);
                 characterTable.characterMoney.AddCash1(1);
-                characterTable.characterMoney.currentWinnerValue.Value-=1;
+                ButtonDict.winnerval-=1;
             }
             
           
@@ -130,9 +138,11 @@ namespace Commands
         IEnumerator insertpoints(){
             yield return new WaitForSeconds(0.5f);
             WWWForm form = new WWWForm();
+       if(ButtonDict.loadedfirst==1){
         form.AddField("id", PlayerPrefs.GetInt("id"));
         form.AddField("points", characterTable.characterMoney.getmoney());
-        
+        form.AddField("winnerval", ButtonDict.winnerval);
+       }
 
 
         using (UnityWebRequest www = UnityWebRequest.Post("https://roulettegame.online/pointsupdate.php", form))
@@ -141,10 +151,12 @@ namespace Commands
 
             if (www.result != UnityWebRequest.Result.Success)
             {
+                Errorscreen.SetActive(true);
                 Debug.Log(www.error);
             }
             else
             {
+                Errorscreen.SetActive(false);
                 Debug.Log("update points");            }
         }
         }

@@ -70,8 +70,11 @@ namespace Infrastructure
             else
             {
                 string s= www.downloadHandler.text.Trim();   
-                roundData.playerMoney=  int.Parse(s);
+                string[] myArray = s.Split('-');
+                roundData.playerMoney=  int.Parse(myArray[0]);
                 ButtonDict.loadedfirst=1;   
+                ButtonDict.winnerval=int.Parse(myArray[1]);
+                ButtonDict.OnWinnerUpdate=1;
                 Debug.Log("Score has been fetched from database");
                 
              }

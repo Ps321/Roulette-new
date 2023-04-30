@@ -40,6 +40,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
     int lastfiveupdate = 0;
 
     public Text messages1;
+    public Text Winnertext;
 
     public GameObject previousBet;
     public GameObject BetOk;
@@ -51,8 +52,8 @@ public class Timer1 : MonoBehaviourPunCallbacks
         PhotonView photonView = GetComponent<PhotonView>();
         photonView.RequestOwnership();
 
-
-
+    Winnertext.text="0";
+    
 
 
     }
@@ -61,6 +62,10 @@ public class Timer1 : MonoBehaviourPunCallbacks
     void Update()
     {
 
+        if(ButtonDict.loadedfirst==1 ){
+            
+            Winnertext.text=ButtonDict.winnerval.ToString();
+        }
 
 
 
@@ -370,7 +375,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
         randomNumber = -1;
 
 
-        
+
 
             Dictionary<string, int> dict1 = new Dictionary<string, int>();
             /***Lowesttt rowwwwwww****/////
@@ -650,8 +655,7 @@ public class Timer1 : MonoBehaviourPunCallbacks
               }
 
 
-
-
+     
 
 
 
