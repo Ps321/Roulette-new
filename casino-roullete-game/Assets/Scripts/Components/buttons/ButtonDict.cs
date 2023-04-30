@@ -87,7 +87,7 @@ namespace Commands
      
         public void Take(){
          
-          Debug.Log(characterTable.characterMoney.currentWinnerValue.Value);
+          Debug.Log(ButtonDict.winnerval);
           
              StartCoroutine(takething());
           
@@ -97,7 +97,7 @@ namespace Commands
 
         IEnumerator takething(){
             if(ButtonDict.winnerval>=5000){
-                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                 for(int i=ButtonDict.winnerval;i>0;i=i-1){
                 yield return new WaitForSeconds(0.0001f);
                 characterTable.characterMoney.AddCash1(1);
                 ButtonDict.winnerval-=1;
@@ -105,7 +105,7 @@ namespace Commands
             }
 
             else if(ButtonDict.winnerval>=1000){
-                 for(int i=characterTable.characterMoney.currentWinnerValue.Value;i>0;i=i-1){
+                 for(int i=ButtonDict.winnerval;i>0;i=i-1){
                 yield return new WaitForSeconds(0.001f);
                 characterTable.characterMoney.AddCash1(1);
                 ButtonDict.winnerval-=1;

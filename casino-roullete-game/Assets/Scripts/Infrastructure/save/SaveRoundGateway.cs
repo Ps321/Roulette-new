@@ -74,6 +74,7 @@ namespace Infrastructure
                 roundData.playerMoney=  int.Parse(myArray[0]);
                 ButtonDict.loadedfirst=1;   
                 ButtonDict.winnerval=int.Parse(myArray[1]);
+                
                 ButtonDict.OnWinnerUpdate=1;
                 Debug.Log("Score has been fetched from database");
                 

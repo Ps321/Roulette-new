@@ -31,7 +31,7 @@ namespace ViewModel
             int aux = characterMoney.Value;
             
             characterMoney.Value += cashWinner;
-            ButtonDict.winnerval=0;
+            //ButtonDict.winnerval=0;
             // currentWinnerValue.Value-=cashWinner;
             ButtonDict.updatekro=true;
            

@@ -131,7 +131,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
     com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/Game.unity:
@@ -779,7 +778,7 @@ ScriptsOnlyBuild:
     className: ObservableSubmitTrigger
   - hash:
       serializedVersion: 2
-      Hash: db4395ee757ff8f8d7f38a4d524dd273
+      Hash: e9b06e8855b1241b2bf030ff0acf1f3e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Timer1
@@ -1175,7 +1174,7 @@ ScriptsOnlyBuild:
     className: LeanTweenScale
   - hash:
       serializedVersion: 2
-      Hash: ffda50da32bda4f1e9bfc56a787cb1df
+      Hash: 401c6bfef04f333020e4ff3a62a026e9
     assemblyName: Scripts.dll
     namespaceName: Commands
     className: ButtonDict
@@ -1313,7 +1312,7 @@ ScriptsOnlyBuild:
     className: PlayerAnimatorManager
   - hash:
       serializedVersion: 2
-      Hash: b8ad46cfa372e382d6702fc4bb047cba
+      Hash: c4e59e3956d59e45a3a4f7065abec993
     assemblyName: Scripts.dll
     namespaceName: Components
     className: GameMoneyDisplay

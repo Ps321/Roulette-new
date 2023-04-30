@@ -42,10 +42,7 @@ public class PreviousBet : MonoBehaviour
         if (ButtonDict.previousbet.Count != 0)
         {
 
-            foreach (KeyValuePair<string, int> kvp in ButtonDict.previousbet)
-            {
-                Debug.Log(kvp.Key + " : " + kvp.Value);
-            }
+           
 
             int first = 0;
 
@@ -122,7 +119,7 @@ public class PreviousBet : MonoBehaviour
                 lastrow[5].GetComponent<ButtonTableInput>().Click2(ButtonDict.previousbet["E_Odd"]);
             }
 
-       /*     int first1 = 0;
+           int first1 = 0;
             for(int i=4;i<=36;i++){
                 string s="mrow_"+i;
                     if (ButtonDict.previousbet.ContainsKey(s))
@@ -178,7 +175,7 @@ public class PreviousBet : MonoBehaviour
                     
                 }
 
-            */
+            
         }
     }
 }
