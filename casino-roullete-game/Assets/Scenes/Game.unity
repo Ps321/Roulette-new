@@ -49077,6 +49077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae4767c258f79d44092f230d1ecf52f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterTable: {fileID: 11400000, guid: dcf65df1e62d063479bad21d940e398d, type: 2}
   numbers:
   - {fileID: 4099534831852101258}
   - {fileID: 6573781864158099642}

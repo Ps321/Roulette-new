@@ -96,9 +96,12 @@ namespace Commands
         }
 
         IEnumerator takething(){
-            if(ButtonDict.winnerval>=5000){
+            if(ButtonDict.winnerval>=4000){
+                // var startamount=ButtonDict.winnerval-3000;
+                // characterTable.characterMoney.AddCash1(startamount);
+                // ButtonDict.winnerval-=startamount;
                  for(int i=ButtonDict.winnerval;i>0;i=i-1){
-                yield return new WaitForSeconds(0.0001f);
+                yield return new WaitForSeconds(0.00001f);
                 characterTable.characterMoney.AddCash1(1);
                 ButtonDict.winnerval-=1;
             }
@@ -106,7 +109,7 @@ namespace Commands
 
             else if(ButtonDict.winnerval>=1000){
                  for(int i=ButtonDict.winnerval;i>0;i=i-1){
-                yield return new WaitForSeconds(0.001f);
+                yield return new WaitForSeconds(0.00001f);
                 characterTable.characterMoney.AddCash1(1);
                 ButtonDict.winnerval-=1;
             }

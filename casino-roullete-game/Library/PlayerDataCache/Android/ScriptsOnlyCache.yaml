@@ -131,6 +131,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
   sceneClasses:
     Assets/Scenes/Game.unity:
@@ -1858,7 +1859,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomAutoCleanupProperty
   - hash:
       serializedVersion: 2
-      Hash: a9b394c06f79b4874bf29344dbf61df4
+      Hash: fbc8f639e1401f51d576caf01a755730
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PreviousBet
